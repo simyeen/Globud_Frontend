@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Post from ".";
 
-export default function PostList({ postList }) {
+import PostCard from ".";
+
+export default function PostCardList({ postList }) {
   return (
     <Wrapper>
       {postList.map((post, index) => (
         <>
-          <Post {...post} />
+          <PostCard {...post} />
           {index !== postList.length - 1 && <Line />}
         </>
       ))}

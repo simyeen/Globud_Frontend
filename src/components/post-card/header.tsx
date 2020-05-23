@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+
 import moment from "moment";
 
-export default function PostHeader({ createdAt, creator, profileImageUrl }) {
+export default function PostCardHeader({
+  createdAt,
+  creator,
+  profileImageUrl,
+}) {
   const date = moment(createdAt).format("MM월 DD일 hh:mm a");
 
   return (

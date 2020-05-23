@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+
 import Header from "../src/components/header";
-import PostList from "../src/components/post/list";
+import PostCardList from "../src/components/post-card/list";
 
 const postList = [
   {
@@ -78,7 +79,7 @@ export default function Home() {
   return (
     <Wrapper>
       <Header />
-      <PostList {...{ postList }} />
+      <PostCardList {...{ postList }} />
     </Wrapper>
   );
 }

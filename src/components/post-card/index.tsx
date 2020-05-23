@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+
 import Header from "./header";
 import Content from "./content";
 import Footer from "./footer";
 
-export default function Post({
+export default function PostCard({
   createdAt,
   creator,
   profileImageUrl,

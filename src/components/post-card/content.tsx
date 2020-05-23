@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function PostContent({
+export default function PostCardContent({
   mbti,
   explanationLink,
   explanation,
