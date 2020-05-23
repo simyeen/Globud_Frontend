@@ -16,7 +16,7 @@ export default function PostFooter({ likeCount }) {
     <Wrapper>
       <LikeButton onClick={handleClick}>
         <HeartIcon
-          style={{ width: "2rem", height: "2rem" }}
+          style={{ width: "2.3rem", height: "2.1rem" }}
           {...{ fillIn, fillOut }}
         />
       </LikeButton>
