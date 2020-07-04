@@ -4,8 +4,8 @@ import Head from "next/head";
 
 import styled, { createGlobalStyle } from "styled-components";
 
+// @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 const GlobalStyle = createGlobalStyle`
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @media (max-width: 262px) {
   html {
     font-size: 7px;
@@ -69,7 +69,7 @@ export default class Timeline extends App {
       <>
         <GlobalStyle />
         <Head>
-          <title>react-typescript-11th</title>
+          <title>GLOBUD</title>
         </Head>
         <BestWrapper>
           <Grey />
@@ -85,7 +85,7 @@ export default class Timeline extends App {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 37.5rem;
+  max-width: 36rem;
   min-height: 100%;
   background-color: white;
   position: relatvie;
