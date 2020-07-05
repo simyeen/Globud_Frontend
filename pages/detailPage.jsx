@@ -1,6 +1,8 @@
 import Navigator from "@src/components/organism/mainPage/navigator";
 import DetailMainBoard from "@src/components/organism/detailPage/detailMainBoard";
 import DetailSubBoard from "@src/components/organism/detailPage/detailSubBoard";
+import DetailLeader from "@src/components/organism/detailPage/detailLeader";
+import DetailCurriculum from "@src/components/organism/detailPage/detailCurriculum";
 
 import React from "react";
 import styled from "styled-components";
@@ -12,6 +14,8 @@ export default function DetailPage() {
       <Navigator />
       <DetailMainBoard />
       <DetailSubBoard />
+      <DetailLeader />
+      <DetailCurriculum />
     </Wrapper>
   );
 }
