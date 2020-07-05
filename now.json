@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "public": false,
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "NODE_ENV": "@react-vote-11th-node-env",
+      "PORT": "@react-vote-11th-port",
+      "API_HOST": "@react-vote-11th-api-host"
+    }
+  }
+}

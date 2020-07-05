@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "우리끼리 방구석 비정상회담",
+    "subName": "영어로 이런 이야기까지? 야 너두 할 수 있어!",
+    "location": "서울시 마포구",
+    "languages": "영어",
+    "numActivities": 4,
+    "originalSellPrice": 40000,
+    "sellPrice": 40000,
+    "totalForeignerMember": 6,
+    "currentForeignerMember": 0,
+    "minForeignerMember": 0,
+    "totalKoreanMember": 6,
+    "currentKoreanMember": 0,
+    "minKoreanMember": 0,
+    "applicationClosedTime": "2020-07-04T00:41:07",
+    "startTime": "2020-07-04T00:41:08",
+    "endTime": "2020-07-04T00:41:11",
+    "description1": "커리큘럼을 소개합니다",
+    "description2": "이런 사람에게 추천해요",
+    "isAvailable": true,
+    "leader": 1,
+    "categories": [
+      1
+    ]
+  }
+]

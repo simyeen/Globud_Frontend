@@ -1,16 +1,24 @@
-import Navigator from "@src/components/organism/navigator";
-import AvailableCrewList from "@src/components/organism/navigator";
+import Navigator from "@src/components/organism/mainPage/navigator";
+import AvailableCrewList from "@src/components/organism/mainPage/availableCrew";
+
+import testData from "C:/workspace/CEOS/GLOBUD/response_1593942476424.json";
 
 import React from "react";
 import styled from "styled-components";
+
+const newTestData = testData.map((item, index) => {
+  return <li key={index}>{item.name}</li>;
+});
 
 export default function Home() {
   return (
     <Wrapper>
       <Navigator />
-      <MainBoardImage src="/mainboard.jpg" alt="메인 전광판" />
+      <MainBoardImage src="/mainboard.png" alt="메인 전광판" />
       <PostCardWrapper>
-        <PostCardHeader>모집중인 크루</PostCardHeader>
+        <PostCardHeader>모집중인 크루{newTestData}</PostCardHeader>
+        <AvailableCrewList />
+        <AvailableCrewList />
       </PostCardWrapper>
     </Wrapper>
   );
@@ -31,11 +39,12 @@ const PostCardHeader = styled.h1`
 `;
 
 const PostCardWrapper = styled.div`
-  dlsplay: flex;
-  flex - direction: column;
-  width : 87.8%;
-  margin-top : 3.5rem;
-  align-content:space-between;
+  display: flex;
+  flex-direction: column;
+  width: 87.8%;
+  margin-top: 3.5rem;
+  margin-bottom: 5.1rem;
+  align-content: space-between;
 `;
 
 const MainBoardImage = styled.img`

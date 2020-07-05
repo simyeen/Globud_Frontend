@@ -2,51 +2,67 @@ import React from "react";
 import styled from "styled-components";
 
 export default function AvailableCrewList() {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper>
+      <CrewImage />
+      <CrewHeader>영어로 진행되는 흥미진진 토론 현장에 초대합니다.</CrewHeader>
+      <CrewTitle>우리끼리 방구석 비정상회담</CrewTitle>
+      <CrewImformationWrapper>
+        <CrewFee>40,000원 (4회)</CrewFee>
+        <Dot></Dot>
+        <CrewPlace>서울시 마포구</CrewPlace>
+      </CrewImformationWrapper>
+    </Wrapper>
+  );
 }
 
 const CrewPlace = styled.p`
-  width: 75px;
-  height: 11px;
+  width: 8.5rem;
+  height: 1.1rem;
   font-family: NotoSansCJKKR;
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
   letter-spacing: -0.52px;
   color: #7e8289;
+  margin-left: 1rem;
 `;
 
-const dot = styled.p`
-  width: 360px;
-  height: 948px;
-  background-color: var(--white);
+const Dot = styled.p`
+  padding: 0px;
+  font-size: 50px;
+  color: #c5cace;
 `;
 
 const CrewFee = styled.p`
-  width: 85px;
-  height: 11px;
+  width: 8.5rem;
+  height: 1.1rem;
   font-family: NotoSansCJKKR;
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
   letter-spacing: -0.52px;
-  color: var(--blue-300);
+  color: #3f66f1;
+  margin-right: 1rem;
 `;
 
 const CrewImformationWrapper = styled.div`
-  dlsplay: flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: flex-start;
+  width: 100%;
 `;
 
 const CrewTitle = styled.h4`
-  width: 264px;
-  height: 23px;
+  width: 26.4rem;
+  height: 2.3rem;
   font-family: NotoSansCJKKR;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -59,7 +75,7 @@ const CrewHeader = styled.p`
   width: 26.4rem;
   height: 1.9rem;
   font-family: NotoSansCJKKR;
-  font-size: 11px;
+  font-size: 1.1rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -68,10 +84,14 @@ const CrewHeader = styled.p`
   color: #8b919b;
 `;
 
-const CrewImage = styled.img``;
+const CrewImage = styled.div`
+  width: 31.6rem;
+  height: 14.4rem;
+  border-radius: 8px;
+`;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 `;
