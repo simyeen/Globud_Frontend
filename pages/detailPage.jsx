@@ -1,4 +1,6 @@
 import Navigator from "@src/components/organism/mainPage/navigator";
+import ApplyButton from "@src/components/molecule/applyButton";
+
 import DetailMainBoard from "@src/components/organism/detailPage/detailMainBoard";
 import DetailCrew from "@src/components/organism/detailPage/detailCrew";
 import DetailLeader from "@src/components/organism/detailPage/detailLeader";
@@ -27,6 +29,7 @@ export default function DetailPage() {
     <Wrapper>
       <Navigator />
       <DetailMainBoard />
+      <ApplyButton style={{}}></ApplyButton>
       <DetailCrew />
       <DetailLeader />
       <DetailCurriculum />

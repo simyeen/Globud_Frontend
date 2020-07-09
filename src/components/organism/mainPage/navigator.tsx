@@ -22,5 +22,8 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 8rem;
-  padding: 1.1rem 2.2rem;
+  padding-left: 2.2rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.1rem;
 `;

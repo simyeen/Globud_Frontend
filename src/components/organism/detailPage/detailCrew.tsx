@@ -37,7 +37,7 @@ export default function DetailCrew() {
 
 const BlueText = styled.p`
   height: 1.5rem;
-  font-family: NotoSansCJKKR;
+
   font-size: 0.9rem;
   font-weight: bold;
   font-stretch: normal;

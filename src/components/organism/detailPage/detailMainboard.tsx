@@ -27,16 +27,32 @@ export default function DetailMainBoard() {
       </SubWrapper>
       <CrossBar src="/crossbar.png" alt="크로스 바 "></CrossBar>
       <DetailNavigator src="/detailNav.png" alt="상세소개 바"></DetailNavigator>
+      <Text>어떤 크루냐면요...</Text>
     </Wrapper>
   );
 }
+
+const Text = styled.p`
+  width: 31.6rem;
+  height: 2.3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.45;
+  letter-spacing: -0.06rem;
+  color: #222426;
+
+  margin-left: 2.2rem;
+  margin-top: 3.8rem;
+  margin-bottom: 1.7rem;
+`;
 
 //나중에 사진 나누면 이 부분을 div로 바꿔주기.
 const DetailNavigator = styled.img`
   width: 100%;
   height: 4.9rem;
   object-fit: contain;
-  margin-bottom: 1.8rem;
 `;
 
 const CrossBar = styled.img`

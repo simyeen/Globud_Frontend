@@ -4,12 +4,15 @@ import styled from "styled-components";
 export default function Apply() {
   return (
     <Wrapper>
-      <ApplyButton src="/applyButton.png" alt="신청 버튼"></ApplyButton>
+      <ApplyCompleteButton
+        src="/applyComplete.png"
+        alt="신청 버튼"
+      ></ApplyCompleteButton>
     </Wrapper>
   );
 }
 
-const ApplyButton = styled.img`
+const ApplyCompleteButton = styled.img`
   width: 31.4rem;
   height: 6rem;
   object-fit: contain;
@@ -21,9 +24,4 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 36rem;
   height: 9.7rem;
-  box-shadow: 0 -0.4rem 0.4rem 0 rgba(126, 130, 137, 0.1);
-  background-color: var(--white);
-
-  position: fixed;
-  bottom: 0rem;
 `;

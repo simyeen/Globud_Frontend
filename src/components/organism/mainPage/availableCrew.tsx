@@ -19,7 +19,6 @@ export default function AvailableCrewList() {
 const CrewPlace = styled.p`
   width: 8rem;
   height: 1.1rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.3rem;
   font-weight: normal;
   font-stretch: normal;
@@ -39,7 +38,6 @@ const Dot = styled.p`
 const CrewFee = styled.p`
   width: 8.5rem;
   height: 1.1rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.3rem;
   font-weight: bold;
   font-stretch: normal;
