@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function DetailSubBoard() {
+export default function DetailCrew() {
   return (
     <Wrapper>
       <SubWrapper>
         <CrewImage></CrewImage>
-        <CrewHeader>"글로벌 친구들과 가벼운 수다+진지한 이야기!"</CrewHeader>
+        <CrewHeader>"글로벌 친구들과 가벼운 수다 + 진지한 이야기!"</CrewHeader>
         <CrewTitle>
           '우리끼리 방구석 비정회담'에서는 자기소개, 영화리뷰, 문화토론,
           시사토론까지 글로벗에서 엄선한 주제들로 총 4주간 글로 벌 친구들과 깊은
@@ -38,12 +38,12 @@ export default function DetailSubBoard() {
 const BlueText = styled.p`
   height: 1.5rem;
   font-family: NotoSansCJKKR;
-  font-size: 9px;
+  font-size: 0.9rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
-  letter-spacing: -0.27px;
+  letter-spacing: -0.027rem;
   color: #3f66f1;
 `;
 
@@ -92,13 +92,12 @@ const CrossBar = styled.img`
 const CrewTitle = styled.h4`
   width: 31.4rem;
   height: 6.3rem;
-  font-family: NotoSansCJKKR;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #222426;
   margin-bottom: 3.7rem;
 `;
@@ -106,13 +105,12 @@ const CrewTitle = styled.h4`
 const CrewHeader = styled.h4`
   width: 31.4rem;
   height: 3.5rem;
-  font-family: NotoSansCJKKR;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: #3f66f1;
 `;
 
@@ -126,8 +124,8 @@ const SubWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-content: space-between;  
-  padding 2.2rem 2.2rem;
+  align-content: space-between;
+  padding: 2.2rem 2.2rem;
 `;
 
 const Wrapper = styled.div`

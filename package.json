@@ -1,5 +1,5 @@
 {
-  "name": "react-typescript-11th",
+  "name": "globud",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,12 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@types/styled-components": "^5.1.0",
     "moment": "^2.26.0",
     "next": "9.4.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",

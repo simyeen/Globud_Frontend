@@ -28,13 +28,12 @@ const PostCardHeader = styled.h1`
   float: left;
   width: 31.6rem;
   height: 1.8rem;
-  font-family: NotoSansCJKKR;
   font-size: 2rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.45;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.06rem;
   color: #222426;
 `;
 

@@ -60,39 +60,37 @@ const DotSpace = styled.div`
 
 const GrayText = styled.p`
   height: 2.1rem;
-  font-family: NotoSansCJKKR;
+
   font-size: 1.3rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #7e8289;
 `;
 
 const CrewFee = styled.p`
-  width: 8rem;
+  width: 9.9rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
   font-size: 2rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.45;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.06rem;
   color: var(--black-500);
 `;
 
 const CrewEvent = styled.p`
   width: 8.4rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
   font-size: 2rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.45;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.06rem;
   color: #3f66f1;
   margin-right: 0.2rem;
 `;
@@ -107,8 +105,7 @@ const CrewImformationWrapper = styled.div`
 const CrewTitle = styled.h4`
   width: 31.6rem;
   height: 3.6rem;
-  font-family: NotoSansCJKKR;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -122,13 +119,13 @@ const CrewTitle = styled.h4`
 const CrewHeader = styled.p`
   width: 31.6rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: #8b919b;
 `;
 
@@ -136,12 +133,14 @@ const SubWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-content: space-between;  
-  padding 2.2rem 2.2rem;
+  align-content: space-between;
+
+  padding-right: 2.2rem;
+  padding-left: 2.2rem;
 `;
 
 const CrewImage = styled.div`
-  width: 36rem;
+  width: 100%;
   height: 19.9rem;
   object-fit: contain;
 `;

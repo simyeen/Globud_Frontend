@@ -17,7 +17,7 @@ export default function AvailableCrewList() {
 }
 
 const CrewPlace = styled.p`
-  width: 8.5rem;
+  width: 8rem;
   height: 1.1rem;
   font-family: NotoSansCJKKR;
   font-size: 1.3rem;
@@ -25,7 +25,7 @@ const CrewPlace = styled.p`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #7e8289;
   margin-left: 1rem;
 `;
@@ -45,7 +45,7 @@ const CrewFee = styled.p`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #3f66f1;
   margin-right: 1rem;
 `;
@@ -61,33 +61,31 @@ const CrewImformationWrapper = styled.div`
 const CrewTitle = styled.h4`
   width: 26.4rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.6rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: #000000;
 `;
 
 const CrewHeader = styled.p`
   width: 26.4rem;
   height: 1.9rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.1rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.73;
-  letter-spacing: -0.33px;
+  letter-spacing: -0.033rem;
   color: #8b919b;
 `;
 
 const CrewImage = styled.div`
   width: 31.6rem;
   height: 14.4rem;
-  border-radius: 8px;
+  border-radius: 0.8rem;
 `;
 
 const Wrapper = styled.div`

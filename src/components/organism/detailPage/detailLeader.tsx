@@ -5,10 +5,10 @@ export default function DetailLeader() {
   return (
     <Wrapper>
       <SubWrapper>
-        <Header>이 크루의 리더는?</Header>
+        <Header>이 크루의 리더는? G</Header>
         <Space />
         <LeaderWrpper>
-          <ImageWrapper>얼굴사진</ImageWrapper>
+          <ImageWrapper></ImageWrapper>
           <TextWrappr>
             <NameWrapper>
               <Leader>리더</Leader>
@@ -39,13 +39,12 @@ const CrossBar = styled.img`
 const Introduce = styled.div`
   width: 25.1rem;
   height: 8.62rem;
-  font-family: NotoSansCJKKR;
-  font-size: 1.3rem;
+  font-size: 1.26rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #555961;
 `;
 
@@ -55,29 +54,27 @@ const Logo = styled.img`
 `;
 
 const Name = styled.p`
-  width: 4.7rem;
+  width: 4.4rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: var(--black-500);
   margin-right: 0.4rem;
 `;
 
 const Leader = styled.p`
-  width: 3.2rem;
+  width: 2.9rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: #222426;
   margin-right: 1rem;
 `;
@@ -91,9 +88,9 @@ const TextWrappr = styled.div`
   flex-direction: column;
 `;
 
-const ImageWrapper = styled.div`
-  width: 48px;
-  height: 48px;
+const ImageWrapper = styled.img`
+  width: 4.8rem;
+  height: 4.8rem;
   border: solid 1px #222426;
   background-color: var(--white);
   margin-right: 1.5rem;
@@ -112,7 +109,6 @@ const Space = styled.div`
 const Header = styled.h4`
   width: 31.5rem;
   height: 2.9rem;
-  font-family: NotoSansCJKKR;
   font-size: 2rem;
   font-weight: bold;
   font-stretch: normal;
@@ -128,10 +124,12 @@ const SubWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-content: space-between;  
-  padding 2.2rem 2.2rem;
+  align-content: space-between;
+  padding: 2.2rem 2.2rem;
 `;
 
+/*  padding-right: 2.2rem;
+  padding-left: 2.2rem;*/
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

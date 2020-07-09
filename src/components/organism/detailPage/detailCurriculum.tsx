@@ -62,13 +62,12 @@ export default function DetailCurriculum() {
 const DetailExplain = styled.p`
   width: 31.5rem;
   height: 6.4rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.3rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #222426;
 
   margin-top: 1.9rem;
@@ -78,28 +77,27 @@ const DetailExplain = styled.p`
 const DetailHeader = styled.h4`
   width: 31.6rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
+
   font-size: 1.6rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: #222426;
 
   margin-top: 4.7rem;
 `;
 
 const WeeksSubText = styled.p`
-  width: 28rem;
+  width: 21rem;
   height: 1.5rem;
-  font-family: NotoSansCJKKR;
   font-size: 0.9rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
-  letter-spacing: -0.27px;
+  letter-spacing: -0.027rem;
   color: #8b919b;
 
   margin-top: 0.1rem;
@@ -107,15 +105,14 @@ const WeeksSubText = styled.p`
 `;
 
 const WeeksText = styled.p`
-  width: 30rem;
+  width: 27.4rem;
   height: 2.1rem;
-  font-family: NotoSansCJKKR;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #000000;
 
   margin-bottom: 0;
@@ -156,27 +153,25 @@ const WhereImage = styled.img`
 const WhereText = styled.p`
   width: 31.6rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.6rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: var(--black-500);
   margin-top: 5.6rem;
 `;
 
 const PeopleText = styled.p`
-  width: 30rem;
+  width: 28.6rem;
   height: 2.2rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.25rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.62;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.052rem;
   color: #222426;
   margin-bottom: 0.4rem;
 `;
@@ -184,13 +179,12 @@ const PeopleText = styled.p`
 const Recommend = styled.p`
   width: 31.6rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.6rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.048rem;
   color: var(--black-500);
 
   margin-top: 3.8rem;
@@ -199,13 +193,12 @@ const Recommend = styled.p`
 const Title = styled.p`
   width: 31.5rem;
   height: 2.2rem;
-  font-family: NotoSansCJKKR;
   font-size: 1.4rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.57;
-  letter-spacing: -0.56px;
+  letter-spacing: -0.056rem;
   color: #8b919b;
 
   margin-top: 0.4rem;
@@ -214,13 +207,12 @@ const Title = styled.p`
 const Header = styled.h3`
   width: 31.4rem;
   height: 2.9rem;
-  font-family: NotoSansCJKKR;
   font-size: 2rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.45;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.06rem;
   color: #222426;
 
   margin-top: 1.5rem;
@@ -237,9 +229,8 @@ const SubWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: space-between;  
-  padding 2.2rem 2.2rem;
-  
+  justify-content: space-between;
+  padding: 2.2rem 2.2rem;
 `;
 
 const Wrapper = styled.div`

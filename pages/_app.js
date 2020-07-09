@@ -6,6 +6,8 @@ import styled, { createGlobalStyle } from "styled-components";
 
 // @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 const GlobalStyle = createGlobalStyle`
+
+
 @media (max-width: 262px) {
   html {
     font-size: 7px;
@@ -41,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 13px;
   }
 }
-body {
+body{
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;

@@ -4,9 +4,9 @@
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "build": {
     "env": {
-      "NODE_ENV": "@react-vote-11th-node-env",
-      "PORT": "@react-vote-11th-port",
-      "API_HOST": "@react-vote-11th-api-host"
+      "NODE_ENV": "@globud-node-env",
+      "PORT": "@globud-port",
+      "API_HOST": "@globud-api-host"
     }
   }
 }
