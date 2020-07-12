@@ -3,20 +3,24 @@ import AvailableCrewList from "@src/components/organism/mainPage/availableCrew";
 
 import testData from "C:/workspace/CEOS/GLOBUD/response_1593942476424.json";
 
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
 const newTestData = testData.map((item, index) => {
-  return <li key={index}>{item.name}</li>;
+  return <strong key={index}> {item.name} </strong>;
 });
 
 export default function Home() {
   return (
     <Wrapper>
       <Navigator />
-      <MainBoardImage src="/mainboard.png" alt="메인 전광판" />
+      <Link href="/detailPage">
+        <MainBoardImage src="/mainboard.png" alt="메인 전광판" />
+      </Link>
       <PostCardWrapper>
-        <PostCardHeader>모집중인 크루{newTestData}</PostCardHeader>
+        {newTestData}(fecthTestData)
+        <PostCardHeader>모집중인 크루</PostCardHeader>
         <AvailableCrewList />
         <AvailableCrewList />
       </PostCardWrapper>

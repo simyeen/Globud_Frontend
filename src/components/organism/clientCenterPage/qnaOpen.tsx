@@ -1,15 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function QnaOpen() {
+export default function QnaOpen({ content }) {
   return (
     <Wrapper>
-      <Text>
-        글로벗은 한국인과 외국인이 관심 분야를 중심으로 지속 가능한 관계를 맺을
-        수 있도록 시사토론, 문화체험, 관광, 액티비티 등 다양한 활동을 제공하는
-        교류 플랫폼입니다. 현재 글로벗은 액티비티, 언어/대화 두 가지의 크루가
-        구성되어 있습니다.
-      </Text>
+      <Text>{content}</Text>
     </Wrapper>
   );
 }

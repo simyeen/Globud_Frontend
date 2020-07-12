@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 export default function Apply() {
   return (
     <Wrapper>
-      <ApplyFinalButton
-        src="/applyFinalButton.png"
-        alt="신청 버튼"
-      ></ApplyFinalButton>
+      <Link href="/index">
+        <ApplyFinalButton
+          src="/applyFinalButton.png"
+          alt="신청 마지막 버튼"
+        ></ApplyFinalButton>
+      </Link>
     </Wrapper>
   );
 }

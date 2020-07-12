@@ -9,7 +9,15 @@ import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  root: {
+    width: 5000,
+    color: "red",
+    height: 48,
+  },
+});
 
 export default function Navigator() {
   const [isToggle, setToggle] = useState(false);
@@ -24,6 +32,8 @@ export default function Navigator() {
     }
   };
 
+  const classes = useStyles();
+
   return (
     <Wrapper onClick={closeDrawer}>
       <HomePage onClick={handleDrawerToggle}>
@@ -35,17 +45,14 @@ export default function Navigator() {
         </HomePage>
       </Link>
       <Login />
-      <Drawer open={isToggle}>
+      <Drawer
+        open={isToggle}
+        className={classes.root}
+        style={{ width: "20rem" }}
+      >
         <MenuItem onClick={handleDrawerToggle}>X</MenuItem>
-        <Link href="/loginPage">
-          <MenuItem onClick={handleDrawerToggle}>로그인</MenuItem>
-        </Link>
-        <Link href="servicePage">
-          <MenuItem onClick={handleDrawerToggle}>글로벗 소개</MenuItem>
-        </Link>
-        <Link href="clientCenterPage">
-          <MenuItem onClick={handleDrawerToggle}>자주 묻는 질문</MenuItem>
-        </Link>
+        <MenuItem onClick={handleDrawerToggle}>로그인</MenuItem>
+        <MenuItem onClick={handleDrawerToggle}>글로벗 소개</MenuItem>
       </Drawer>
     </Wrapper>
   );
@@ -55,13 +62,4 @@ const HomePage = styled.div``;
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 8rem;
-  padding-left: 2.2rem;
-  padding-right: 1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 2.1rem;
 `;

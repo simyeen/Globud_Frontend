@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function WeeksText() {
+export default function WeeksText({ curriculums }) {
+  const { id, strongWord, title, content } = curriculums;
+
   return (
     <Wrapper>
-      <Header>
-        <Blue>1주차,</Blue>
-        이름 쌓기로 자기소개 하기!
-      </Header>
-      <Content>
-        첫 주의 대화주제는 아이스 브레이킹! 이름 쌓기 게임을 아시나요? 소리내어
-        서로의 이름을 기억해보면서, 스몰 토킹을 이어나가보세요!
-      </Content>
+      <Title>
+        <Blue>{strongWord}</Blue>
+        {title}
+      </Title>
+      <Content>{content}</Content>
     </Wrapper>
   );
 }
@@ -34,8 +33,8 @@ const Content = styled.p`
   margin-left: 6.7rem;
 `;
 
-const Header = styled.p`
-  width: 23rem;
+const Title = styled.p`
+  width: 26rem;
   height: 2.1rem;
   font-size: 1.3rem;
   font-weight: bold;

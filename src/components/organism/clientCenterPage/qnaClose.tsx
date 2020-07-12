@@ -1,20 +1,38 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export default function QnaClose(props) {
+export default function QnaClose({ header, onOpen }) {
   const [isOpenIn, setOpenIn] = useState(false);
+
+  const handleOpen = () => {
+    console.log(onOpen);
+    console.log(isOpenIn);
+    if (isOpenIn === false) {
+      onOpen(true);
+      setOpenIn(true);
+    } else if (isOpenIn === true) {
+      onOpen(false);
+      setOpenIn(false);
+    }
+  };
 
   return (
     <Wrapper>
       <SubWrapper>
-        <Header>QnaClose박스</Header>
-        <Arrow src="/underArrow.png" alt="아래 화살표" />
-        {isOpenIn && <Arrow src="/upperArrow.png" alt="아래 화살표" />}
+        <Header>{header}</Header>
+        {!isOpenIn && (
+          <Arrow src="/underArrow.png" alt="아래 화살표" onClick={handleOpen} />
+        )}
+        {isOpenIn && (
+          <Arrow src="/upperArrow.png" alt="위 화살표" onClick={handleOpen} />
+        )}
       </SubWrapper>
     </Wrapper>
   );
 }
 
+//
+//
 const Arrow = styled.img`
   width: 2.4rem;
   height: 2.4rem;

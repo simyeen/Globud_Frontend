@@ -54,7 +54,6 @@ const Header = styled.p`
   color: #222426;
 
   margin-top: 3.6rem;
-  margin-top: 0.5rem;
 `;
 
 const SubWrapper = styled.div`

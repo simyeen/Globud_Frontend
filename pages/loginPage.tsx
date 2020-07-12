@@ -12,7 +12,6 @@ export default function Home() {
         <Header>간편하게 로그인하고, </Header>
         <Header>나의 크루 활동을 관리해보세요.</Header>
         <Space />
-
         <KakaoLogin src="/kakaoLogin.png" alt="카카오 로그인" />
       </SubWrapper>
       <BackGroup src="/backGroupImage.png" alt="배경 사진" />
@@ -35,6 +34,7 @@ const BackGroup = styled.img`
 const Space = styled.div`
   margin-top: 10rem;
 `;
+
 const Header = styled.p`
   width: 31.6rem;
   height: 2rem;
@@ -51,7 +51,6 @@ const Header = styled.p`
 
 const SubWrapper = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;

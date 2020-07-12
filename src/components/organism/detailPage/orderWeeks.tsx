@@ -3,11 +3,13 @@ import WeeksText from "@src/components/molecule/weeksText";
 import React from "react";
 import styled from "styled-components";
 
-export default function OrderWeeksText() {
+export default function OrderWeeksText({ curriculums }) {
+  //const { id, strongWord, title, content } = curriculums;
+
   return (
     <Wrapper>
       <Image>짝수 사진</Image>
-      <WeeksText></WeeksText>
+      <WeeksText {...{ curriculums }} />
     </Wrapper>
   );
 }
