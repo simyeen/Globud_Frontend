@@ -4,17 +4,15 @@ import React from "react";
 import styled from "styled-components";
 
 export default function OrderWeeksText({ curriculums }) {
-  //const { id, strongWord, title, content } = curriculums;
-
   return (
     <Wrapper>
-      <Image>짝수 사진</Image>
+      <Image src="/ServiceFriends.png" alt="주의사항 1" />
       <WeeksText {...{ curriculums }} />
     </Wrapper>
   );
 }
 
-const Image = styled.div`
+const Image = styled.img`
   width: 29.7rem;
   height: 16rem;
   object-fit: contain;

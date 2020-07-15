@@ -3,13 +3,15 @@ import ApplyMainboard from "@src/components/organism/applyPage/applyMainboard";
 import ApplyForm from "@src/components/organism/applyPage/applyForm";
 import ApplyCompleteBotton from "@src/components/molecule/applyCompleteBotton";
 
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 export default function Home() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
   return (
     <Wrapper>
-      <Navigator />
+      <Navigator onMenuOpen={setMenuOpen} />
       <ApplyMainboard></ApplyMainboard>
       <CrossBar src="/crossbar.png" alt="크로스 바 "></CrossBar>
       <ApplyForm></ApplyForm>

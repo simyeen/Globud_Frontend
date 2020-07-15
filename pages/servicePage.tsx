@@ -1,12 +1,14 @@
 import Navigator from "@src/components/organism/mainPage/navigator";
 
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function ServicePage() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
   return (
     <Wrapper>
-      <Navigator />
+      <Navigator onMenuOpen={setMenuOpen} />
       <MainBoardImage src="/ServiceMainboard.png" alt="메인 전광판" />
       <SubWrapper>
         <Slogan src="/ServiceSlogan.png" alt="slogan" />
@@ -22,6 +24,7 @@ export default function ServicePage() {
       <Friends src="/ServiceFriends.png" alt="외국인 친구들 " />
       <SubWrapper>
         <HeaderWrapper>
+          <Blue></Blue>
           <Header2>소규모 크루로 친밀하게</Header2>
         </HeaderWrapper>
         <Content style={{ marginTop: "2.8rem" }}>
@@ -30,16 +33,13 @@ export default function ServicePage() {
           있어요.
         </Content>
         <Background1 src="/how_1.png" alt="백그라운드이미지1" />
-        <Friends
-          src="/ServiceFriends2.png"
-          alt="외국인 친구들2"
-          style={{
-            marginLeft: "20rem",
-            marginTop: "8rem",
-            marginBottom: "2.5rem",
-          }}
-        />
-        <Header2>리더가 이끌어가요</Header2>
+        <Friends2 src="/ServiceFriends2.png" alt="외국인 친구들2" />
+      </SubWrapper>
+      <SubWrapper>
+        <HeaderWrapper>
+          <Blue></Blue>
+          <Header2>리더가 이끌어가요</Header2>
+        </HeaderWrapper>
         <Content
           style={{
             height: "4.8rem",
@@ -90,20 +90,34 @@ const Header2 = styled.div`
   letter-spacing: -0.048rem;
   color: #222426;
 
-  flex-direction: flex-start;
+  margin-right:10rem
+  position: relative;
+  z-index: 1;
 `;
 
 const Blue = styled.div`
   width: 4.3rem;
   height: 0.5rem;
   background-color: #3c7dfa;
-
-  position: relative;
+  margin-top: 1.7rem;
+  position: absolute;
 `;
 
 const HeaderWrapper = styled.div`
-  width: 23.3rem;
+  display: flex;
+  text-align: left;
+  width: 31.5rem;
   height: 2.3rem;
+`;
+
+const Friends2 = styled.img`
+  width: 100%;
+  height: 12rem;
+  object-fit: contain;
+
+  padding-left: 7.3rem;
+  margin-top: 8rem;
+  margin-bottom: 2.5rem;
 `;
 
 const Friends = styled.img`
@@ -111,7 +125,7 @@ const Friends = styled.img`
   height: 12rem;
   object-fit: contain;
   margin-top: 4.1rem;
-  margin-right: 10rem;
+  padding-right: 7rem;
   margin-bottom: 2.1rem;
 `;
 

@@ -2,13 +2,15 @@ import Navigator from "@src/components/organism/mainPage/navigator";
 import ApplyMainboard from "@src/components/organism/applyPage/applyMainboard";
 import ApplyFinalButton from "@src/components/molecule/applyFinalButton";
 
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function Home() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
   return (
     <Wrapper>
-      <Navigator />
+      <Navigator onMenuOpen={setMenuOpen} />
       <ApplyMainboard></ApplyMainboard>
       <Space />
       <ApplyFinalButton></ApplyFinalButton>

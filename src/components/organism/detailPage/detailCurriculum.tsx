@@ -74,7 +74,7 @@ const DetailExplain = styled.p`
   margin-bottom: 2rem;
 `;
 
-const DetailHeader = styled.h4`
+const DetailHeader = styled.p`
   width: 31.6rem;
   height: 2.3rem;
 
@@ -237,5 +237,4 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 36rem;
 `;

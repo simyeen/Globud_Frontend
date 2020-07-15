@@ -28,5 +28,5 @@ const Wrapper = styled.div`
   background-color: var(--white);
 
   position: fixed;
-  bottom: 0rem;
+  bottom: 0;
 `;

@@ -2,20 +2,22 @@ import Hamburger from "@src/asset/icons/hamburger";
 import Login from "@src/asset/icons/login";
 import Logo from "@src/asset/icons/logo";
 
-import Drawer from "@material-ui/core/Drawer";
-import MenuItem from "@material-ui/core/MenuItem";
-
 import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { withStyles } from "@material-ui/core/styles";
-
-export default function Navigator() {
+export default function Navigator({ onMenuOpen }) {
   const [isToggle, setToggle] = useState(false);
 
   const handleDrawerToggle = () => {
-    setToggle(!isToggle);
+    console.log("메뉴바 오픈");
+    if (isToggle === false) {
+      setToggle(true);
+      onMenuOpen(true);
+    } else if (isToggle === true) {
+      setToggle(false);
+      onMenuOpen(false);
+    }
   };
 
   const closeDrawer = () => {
@@ -25,35 +27,90 @@ export default function Navigator() {
   };
 
   return (
-    <Wrapper onClick={closeDrawer}>
-      <HomePage onClick={handleDrawerToggle}>
-        <Hamburger />
-      </HomePage>
-      <Link href="/index">
-        <HomePage>
-          <Logo />
+    <Wrapper>
+      {isToggle && (
+        <MenuBar>
+          <Menu>
+            <Image src="/close.png" alt="닫기창" onClick={handleDrawerToggle} />
+            <Link href="/loginPage">
+              <Text onClick={handleDrawerToggle}>로그인</Text>
+            </Link>
+            <Link href="servicePage">
+              <Text onClick={handleDrawerToggle}>글로벗 소개</Text>
+            </Link>
+            <Link href="clientCenterPage">
+              <Text onClick={handleDrawerToggle}>자주 묻는 질문</Text>
+            </Link>
+          </Menu>
+          <Rest>여백부분</Rest>
+        </MenuBar>
+      )}
+      <SubWrapper onClick={closeDrawer}>
+        <HomePage onClick={handleDrawerToggle}>
+          <Hamburger />
         </HomePage>
-      </Link>
-      <Login />
-      <Drawer open={isToggle}>
-        <MenuItem onClick={handleDrawerToggle}>X</MenuItem>
-        <Link href="/loginPage">
-          <MenuItem onClick={handleDrawerToggle}>로그인</MenuItem>
+        <Link href="/index">
+          <HomePage>
+            <Logo />
+          </HomePage>
         </Link>
-        <Link href="servicePage">
-          <MenuItem onClick={handleDrawerToggle}>글로벗 소개</MenuItem>
-        </Link>
-        <Link href="clientCenterPage">
-          <MenuItem onClick={handleDrawerToggle}>자주 묻는 질문</MenuItem>
-        </Link>
-      </Drawer>
+        <Login />
+      </SubWrapper>
     </Wrapper>
   );
 }
 
+const Image = styled.img`
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  margin-bottom: 7.2rem;
+`;
+
+const Text = styled.p`
+  width: 15.8rem;
+  height: 2.3rem;
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: -0.048rem;
+  color: #222426;
+  margin-bottom: 3rem;
+`;
+
+const Rest = styled.div`
+  width: 100%;
+
+  right: 1;
+  opacity: 0.5;
+  background-color: #222426;
+`;
+
+const Menu = styled.div`
+  width: 22rem;
+  height: 64rem;
+
+  padding-left: 2.2rem;
+  padding-right: 4rem;
+  padding-top: 3.3rem;
+
+  background-color: #ffffff;
+`;
+
+const MenuBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 36rem;
+  height: 64rem;
+
+  position: fixed;
+`;
+
 const HomePage = styled.div``;
 
-const Wrapper = styled.div`
+const SubWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -65,3 +122,20 @@ const Wrapper = styled.div`
   padding-top: 1.5rem;
   padding-bottom: 2.1rem;
 `;
+
+const Wrapper = styled.div`
+  width: 100%;
+`;
+
+/*      <Drawer open={isToggle}>
+        <MenuItem onClick={handleDrawerToggle}>X</MenuItem>
+        <Link href="/loginPage">
+          <MenuItem onClick={handleDrawerToggle}>로그인</MenuItem>
+        </Link>
+        <Link href="servicePage">
+          <MenuItem onClick={handleDrawerToggle}>글로벗 소개</MenuItem>
+        </Link>
+        <Link href="clientCenterPage">
+          <MenuItem onClick={handleDrawerToggle}>자주 묻는 질문</MenuItem>
+        </Link>
+      </Drawer>*/

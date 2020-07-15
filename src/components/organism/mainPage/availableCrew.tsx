@@ -1,20 +1,40 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
-export default function AvailableCrewList() {
+export default function AvailableCrewList({ availableData }) {
+  const { id, header, title, fee, place } = availableData;
+
   return (
     <Wrapper>
-      <CrewImage />
-      <CrewHeader>영어로 진행되는 흥미진진 토론 현장에 초대합니다.</CrewHeader>
-      <CrewTitle>우리끼리 방구석 비정상회담</CrewTitle>
+      <Link href={`/detailPages/detailPage${id}`}>
+        <CrewImage
+          src="/ServiceFriends2.png"
+          alt={`/detailPages/detailPage${id}`}
+        />
+      </Link>
+      <CrewHeader>{header}</CrewHeader>
+      <CrewTitle>{title}</CrewTitle>
       <CrewImformationWrapper>
-        <CrewFee>40,000원 (4회)</CrewFee>
-        <Dot></Dot>
-        <CrewPlace>서울시 마포구</CrewPlace>
+        <CrewFee>{fee}</CrewFee>
+        <DotSpace>
+          <Dot src="/dot.png" alt="점" />
+        </DotSpace>
+        <CrewPlace>{place}</CrewPlace>
       </CrewImformationWrapper>
     </Wrapper>
   );
 }
+
+const Dot = styled.img`
+  width: 0.5rem;
+  height: 0.3rem;
+  object-fit: contain;
+`;
+
+const DotSpace = styled.div`
+  padding-top: 0.4rem;
+`;
 
 const CrewPlace = styled.p`
   width: 8rem;
@@ -27,12 +47,6 @@ const CrewPlace = styled.p`
   letter-spacing: -0.052rem;
   color: #7e8289;
   margin-left: 1rem;
-`;
-
-const Dot = styled.p`
-  padding: 0px;
-  font-size: 50px;
-  color: #c5cace;
 `;
 
 const CrewFee = styled.p`
@@ -56,16 +70,18 @@ const CrewImformationWrapper = styled.div`
   width: 100%;
 `;
 
-const CrewTitle = styled.h4`
+const CrewTitle = styled.p`
   width: 26.4rem;
   height: 2.3rem;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
   letter-spacing: -0.048rem;
   color: #000000;
+
+  margin-top: 0.5rem;
 `;
 
 const CrewHeader = styled.p`
@@ -78,12 +94,16 @@ const CrewHeader = styled.p`
   line-height: 1.73;
   letter-spacing: -0.033rem;
   color: #8b919b;
+
+  margin-bottom: 0rem;
+  margin-top: 1rem;
 `;
 
-const CrewImage = styled.div`
+const CrewImage = styled.img`
   width: 31.6rem;
   height: 14.4rem;
   border-radius: 0.8rem;
+  margin-top: 3.5rem;
 `;
 
 const Wrapper = styled.div`

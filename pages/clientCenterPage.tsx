@@ -1,10 +1,12 @@
 import Navigator from "@src/components/organism/mainPage/navigator";
 import QnaBox from "@src/components/organism/clientCenterPage/qnaBox";
 
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function ClientCenterPage() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
   const qnas = [
     {
       id: 1,
@@ -34,7 +36,7 @@ export default function ClientCenterPage() {
 
   return (
     <Wrapper>
-      <Navigator />
+      <Navigator onMenuOpen={setMenuOpen} />
       <Header>자주 하는 질문</Header>
       {qnas.map((qna) => (
         <QnaBox key={qna.id} header={qna.header} content={qna.content} />
@@ -47,7 +49,6 @@ export default function ClientCenterPage() {
 const Header = styled.h1`
   width: 15.8rem;
   height: 2.3rem;
-  font-family: NotoSansCJKKR;
   font-size: 2rem;
   font-weight: bold;
   font-stretch: normal;
@@ -71,4 +72,5 @@ const Wrapper = styled.div`
 const Space = styled.div`
   width: 100%;
   height: 6.4rem;
+  margin-bottom: 10rem;
 `;

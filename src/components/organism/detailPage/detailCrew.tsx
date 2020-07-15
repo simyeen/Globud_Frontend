@@ -5,6 +5,7 @@ export default function DetailCrew() {
   return (
     <Wrapper>
       <SubWrapper>
+        <Text>어떤 크루냐면요...</Text>
         <CrewImage></CrewImage>
         <CrewHeader>"글로벌 친구들과 가벼운 수다 + 진지한 이야기!"</CrewHeader>
         <CrewTitle>
@@ -19,7 +20,13 @@ export default function DetailCrew() {
         />
         <ImageWrapper>
           <Image src="/4weeksCalender.png" alt="4주차" />
+          <DotSpace>
+            <Dot src="/Bluedot.png" alt="파란 점" />
+          </DotSpace>
           <Image src="/englishBook.png" alt="영어활동" />
+          <DotSpace>
+            <Dot src="/Bluedot.png" alt="파란 점" />
+          </DotSpace>
           <Image src="/friends.png" alt="외국인 친구들" />
         </ImageWrapper>
         <TextWrapper>
@@ -35,6 +42,32 @@ export default function DetailCrew() {
   );
 }
 
+const Dot = styled.img`
+  width: 0.3rem;
+  height: 0.5rem;
+  object-fit: contain;
+`;
+
+const DotSpace = styled.div`
+  padding-left: 0.9rem;
+  padding-right: 0.7rem;
+  padding-top: 1rem;
+`;
+
+const Text = styled.p`
+  width: 31.6rem;
+  height: 2.3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.45;
+  letter-spacing: -0.06rem;
+  color: #222426;
+
+  margin-top: 1.6rem;
+  margin-bottom: 1.7rem;
+`;
 const BlueText = styled.p`
   height: 1.5rem;
 
@@ -89,7 +122,7 @@ const CrossBar = styled.img`
   object-fit: contain;
 `;
 
-const CrewTitle = styled.h4`
+const CrewTitle = styled.p`
   width: 31.4rem;
   height: 6.3rem;
   font-size: 1.3rem;
@@ -102,7 +135,7 @@ const CrewTitle = styled.h4`
   margin-bottom: 3.7rem;
 `;
 
-const CrewHeader = styled.h4`
+const CrewHeader = styled.p`
   width: 31.4rem;
   height: 3.5rem;
   font-size: 1.6rem;
@@ -112,9 +145,12 @@ const CrewHeader = styled.h4`
   line-height: 1.44;
   letter-spacing: -0.048rem;
   color: #3f66f1;
+
+  margin-top: 2.2rem;
+  margin-bottom: 0rem;
 `;
 
-const CrewImage = styled.div`
+const CrewImage = styled.img`
   width: 100%;
   height: 14.7rem;
   object-fit: contain;

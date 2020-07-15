@@ -4,13 +4,12 @@ import styled from "styled-components";
 export default function DetailMainBoard() {
   return (
     <Wrapper>
-      <CrewImage />
+      <CrewImage src="/mainboard.png" alt="테스트 이미지" />
       <SubWrapper>
         <CrewHeader>영어로 이런 이야기까지? 야 너두 할 수 있어!</CrewHeader>
         <CrewTitle>우리끼리 방구석 비정상회담</CrewTitle>
         <CrewImformationWrapper>
           <CrewEvent>오픈특가</CrewEvent>
-
           <CrewFee>40,000원</CrewFee>
         </CrewImformationWrapper>
         <CrewImformationWrapper>
@@ -26,34 +25,9 @@ export default function DetailMainBoard() {
         </CrewImformationWrapper>
       </SubWrapper>
       <CrossBar src="/crossbar.png" alt="크로스 바 "></CrossBar>
-      <DetailNavigator src="/detailNav.png" alt="상세소개 바"></DetailNavigator>
-      <Text>어떤 크루냐면요...</Text>
     </Wrapper>
   );
 }
-
-const Text = styled.p`
-  width: 31.6rem;
-  height: 2.3rem;
-  font-size: 2rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.45;
-  letter-spacing: -0.06rem;
-  color: #222426;
-
-  margin-left: 2.2rem;
-  margin-top: 3.8rem;
-  margin-bottom: 1.7rem;
-`;
-
-//나중에 사진 나누면 이 부분을 div로 바꿔주기.
-const DetailNavigator = styled.img`
-  width: 100%;
-  height: 4.9rem;
-  object-fit: contain;
-`;
 
 const CrossBar = styled.img`
   width: 100%;
@@ -69,9 +43,9 @@ const Dot = styled.img`
 `;
 
 const DotSpace = styled.div`
-  padding-left: 0.7rem;
+  padding-left: 0.9rem;
   padding-right: 0.7rem;
-  padding-top: 0.3rem;
+  padding-top: 0.4rem;
 `;
 
 const GrayText = styled.p`
@@ -116,9 +90,12 @@ const CrewImformationWrapper = styled.div`
   flex-wrap: nowrap;
   justify-content: flex-end;
   width: 100%;
+  text-align: right;
+
+  margin-top: 1.6rem;
 `;
 
-const CrewTitle = styled.h4`
+const CrewTitle = styled.p`
   width: 31.6rem;
   height: 3.6rem;
   font-size: 2.5rem;
@@ -143,6 +120,8 @@ const CrewHeader = styled.p`
   line-height: 1.44;
   letter-spacing: -0.048rem;
   color: #8b919b;
+
+  margin-top: 2.2rem;
 `;
 
 const SubWrapper = styled.div`
@@ -155,10 +134,12 @@ const SubWrapper = styled.div`
   padding-left: 2.2rem;
 `;
 
-const CrewImage = styled.div`
+const CrewImage = styled.img`
   width: 100%;
   height: 19.9rem;
   object-fit: contain;
+
+  padding-top: 0rem;
 `;
 
 const Wrapper = styled.div`

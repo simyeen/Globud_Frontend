@@ -50,10 +50,13 @@ export default function WeeksList() {
 
   return (
     <Wrapper>
-      {" "}
-      {curriculums.map((curriculums) => (
-        <OddWeeks key={curriculums.id} {...{ curriculums }}></OddWeeks>
-      ))}
+      {curriculums.map((curriculums, index) =>
+        index % 2 === 0 ? (
+          <OddWeeks key={curriculums.id} {...{ curriculums }} />
+        ) : (
+          <OrderWeeks key={curriculums.id} {...{ curriculums }} />
+        )
+      )}
     </Wrapper>
   );
 }

@@ -56,7 +56,6 @@ const SubWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
   height: 6.1rem;
 
   margin-left: 2.9rem;

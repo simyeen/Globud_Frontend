@@ -5,7 +5,7 @@ export default function DetailLeader() {
   return (
     <Wrapper>
       <SubWrapper>
-        <Header>이 크루의 리더는? G</Header>
+        <Header>이 크루의 리더는?</Header>
         <Space />
         <LeaderWrpper>
           <ImageWrapper></ImageWrapper>
@@ -106,7 +106,7 @@ const Space = styled.div`
   height: 3rem;
 `;
 
-const Header = styled.h4`
+const Header = styled.p`
   width: 31.5rem;
   height: 2.9rem;
   font-size: 2rem;

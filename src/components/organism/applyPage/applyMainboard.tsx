@@ -21,9 +21,13 @@ export default function ApplyMainboard() {
         </Header>
         <GreyWrpper>
           <Grey>서울시 마포구</Grey>
-          <Dot></Dot>
+          <DotSpace style={{ paddingLeft: "0" }}>
+            <Dot src="/dot.png" alt="점" />
+          </DotSpace>
           <Grey style={{ width: "1.7rem" }}>4회</Grey>
-          <Dot></Dot>
+          <DotSpace>
+            <Dot src="/dot.png" alt="점" />
+          </DotSpace>
           <Grey style={{ width: "3rem" }}>2시간</Grey>
         </GreyWrpper>
         <TextWrapper>
@@ -47,9 +51,16 @@ export default function ApplyMainboard() {
   );
 }
 
-const Dot = styled.p`
-  padding: 1rem;
-  color: #c5cace;
+const DotSpace = styled.div`
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.3rem;
+`;
+
+const Dot = styled.img`
+  width: 0.3rem;
+  height: 0.3rem;
+  object-fit: contain;
 `;
 
 const Text = styled.p`
@@ -74,7 +85,7 @@ const TextWrapper = styled.div`
   margin-top: 1.4rem;
 `;
 
-const Grey = styled.h4`
+const Grey = styled.p`
   width: 7rem;
   height: 1.9rem;
   font-size: 1.1rem;
