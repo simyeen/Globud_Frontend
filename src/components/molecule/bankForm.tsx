@@ -4,6 +4,7 @@ export default function BankForm({ bank, onSelet, onClose }) {
   const handleSelet = () => {
     console.log({ bank });
     onSelet(bank);
+    onClose(false);
   };
 
   return (

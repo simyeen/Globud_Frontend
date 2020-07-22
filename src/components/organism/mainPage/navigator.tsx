@@ -49,16 +49,23 @@ export default function Navigator() {
             <Logo />
           </HomePage>
         </Link>
-        <Login />
+        <LoginSpace />
       </SubWrapper>
     </Wrapper>
   );
 }
 
 /* 카카오 로그인 만들며 넣기.
+ <Login /> <- 이거 넣으면
+
             <Link href="/loginPage">
               <Text onClick={handleDrawerToggle}>로그인</Text>
             </Link>*/
+const LoginSpace = styled.div`
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+`;
 const Image = styled.img`
   width: 2.4rem;
   height: 2.4rem;
@@ -105,6 +112,7 @@ const MenuBar = styled.div`
   height: 64rem;
 
   position: fixed;
+  z-index: 9999;
 `;
 
 const HomePage = styled.div``;

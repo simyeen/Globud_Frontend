@@ -20,6 +20,8 @@ export default function DetailPage1() {
   const { detailLeader } = useDetailLeader();
   const { detailActivities } = useDetailActivities();
 
+  var crew = 2;
+
   console.log("detailMainboardData testing : ", detailMainboard);
   console.log("detailLeader testing : ", detailLeader);
   console.log("detailActivities testing : ", detailActivities);
@@ -82,7 +84,7 @@ export default function DetailPage1() {
         </a>
       </DetailNavigator>
       <MiniBar />
-      <ApplyButton />
+      <ApplyButton crew={crew} />
       <a id="Crew">
         <DetailCrew {...detailMainboard[1]} />
       </a>

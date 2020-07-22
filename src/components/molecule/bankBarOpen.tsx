@@ -1,43 +1,34 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export default function BankBarOpen({ onMenuOpen, onMenuClose }) {
+export default function BankBarOpen({ onMenuOpen }) {
   const [isToggle, setToggle] = useState(false);
 
   const handleDrawerToggle = () => {
     console.log("isToggle : ", isToggle);
     console.log("onMenuOpen : ", { onMenuOpen });
-    console.log("onMenuClose : ", { onMenuClose });
 
-    if (isToggle === false) {
-      setToggle(true);
-      onMenuOpen(true);
-    } else if (isToggle === true) {
-      setToggle(false);
-      onMenuOpen(false);
-    }
+    onMenuOpen(true);
   };
 
   return (
     <Wrapper>
-      {!isToggle && { onMenuClose } && (
-        <Arrow
-          src="/underArrow.png"
-          alt="아래 화살표"
-          onClick={handleDrawerToggle}
-        />
-      )}
-      {isToggle && { onMenuClose } && (
+      <Arrow
+        src="/underArrow.png"
+        alt="아래 화살표"
+        onClick={handleDrawerToggle}
+      />
+    </Wrapper>
+  );
+}
+/*      {isToggle && { onMenuClose } && (
         <Arrow
           src="/upperArrow.png"
           alt="위 화살표"
           onClick={handleDrawerToggle}
         />
       )}
-    </Wrapper>
-  );
-}
-
+*/
 const Arrow = styled.img`
   width: 2.4rem;
   height: 2.4rem;

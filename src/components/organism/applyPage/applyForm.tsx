@@ -4,13 +4,11 @@ import styled from "styled-components";
 import axios from "axios";
 
 export default function AvailableCrewList(props) {
-  const { onAdimt, onMenuOpen, onMenuClose, seletBank } = props;
+  const { onAdimt, onMenuOpen, seletBank, crewNumber } = props;
   const [isFirstChecked, setFirstChecked] = useState(false);
   const [isSecondChecked, setSecondChecked] = useState(false);
-  var depositBank = seletBank;
-
-  console.log("depositBank is : ", depositBank);
-
+  var userForm = {};
+  console.log("crewNumber : ", crewNumber);
   const handleFirstCheckBox = () => {
     if (isFirstChecked === false) {
       setFirstChecked(true);
@@ -29,11 +27,9 @@ export default function AvailableCrewList(props) {
   const [form, setForm] = useState({
     name: "",
     depositNum: "",
-    depositBank: "기본은행",
     nation: "",
     email: "",
     phone: "",
-    crew: 2,
   });
 
   const handleFormChange = (e) => {
@@ -65,21 +61,26 @@ export default function AvailableCrewList(props) {
   };
 
   const handlePost = () => {
-    console.log("post 보내기 : ", form);
+    console.log("post 보내기 : ", userForm);
     axios
-      .post("https://globud.co.kr/api/applies/", form)
+      .post("https://globud.co.kr/api/applies/", userForm)
       .then((response) => {
-        console.log("데이터 전송 성공.", form);
+        console.log("데이터 전송 성공.", userForm);
         console.log(response);
       })
       .catch((error) => {
         console.log(error);
-        console.log("error in ", form);
+        console.log("error in ", userForm);
         console.log("데이터 전송 실패.");
       });
   };
 
-  let agreements = { agreement1: 1, agreement2: 1 };
+  var restForm = {
+    depositBank: seletBank,
+    crew: crewNumber,
+    agreement1: 1,
+    agreement2: 1,
+  };
 
   const handleSubmit = () => {
     if (isValidForm() === false) {
@@ -87,19 +88,19 @@ export default function AvailableCrewList(props) {
     }
     if (isValidForm() === true && (!isFirstChecked || !isSecondChecked)) {
       console.log(form, isFirstChecked, isSecondChecked);
-      console.log("not validForm");
+      console.log("please checking all of checkBox");
       alert("약관에 동의하여 주십시오.");
       return;
     } else if (isValidForm() === true && isFirstChecked && isSecondChecked) {
       alert(`${form.name}님 신청완료 되었습니다.`);
-      console.log("handleSubmit : ", form);
-      setForm({ ...form, ...agreements });
-      console.log(form);
+      console.log("handleSubmit in : ", form);
+
+      userForm = Object.assign(form, restForm);
+      console.log("userForm : ", userForm);
       handlePost();
       onAdimt(true);
     }
   };
-  console.log("현재 은행 : ", seletBank);
 
   return (
     <Wrapper>
@@ -159,7 +160,7 @@ export default function AvailableCrewList(props) {
             >
               {seletBank}
             </Text>
-            <BankBarOpen {...{ onMenuOpen }} {...{ onMenuClose }} />
+            <BankBarOpen {...{ onMenuOpen }} />
           </BankSubWrapper>
           <HorizonBar />
           <Content

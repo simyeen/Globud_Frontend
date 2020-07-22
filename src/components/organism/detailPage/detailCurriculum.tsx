@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export default function DetailCurriculum(props) {
   const { peopleDescprition, placeDescprition, weeksDescprition } = props;
-  console.log("시발십라", peopleDescprition);
   return (
     <Wrapper>
       <SubWrapper>

@@ -1,13 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { useRouter } from "next/router";
+import { withRouter } from "next/router";
 
-export default function Apply() {
+export default function ToApplyPage({ crew }) {
+  const router = useRouter();
+
+  const handleRouter = () => {
+    router.push({
+      pathname: "/applyPage",
+      query: { crewNumber: crew },
+    });
+  };
+
   return (
     <Wrapper>
-      <Link href="/applyPage">
-        <ApplyButton src="/applyButton.png" alt="신청 버튼"></ApplyButton>
-      </Link>
+      <ApplyButton
+        src="/applyButton.png"
+        alt="신청 버튼"
+        onClick={handleRouter}
+      />
     </Wrapper>
   );
 }

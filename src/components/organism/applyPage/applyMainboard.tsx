@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function ApplyMainboard() {
+export default function ApplyMainboard(props) {
+  const { crewNumber, img1, name, sellPrice, location, numActivities } = props;
+  console.log(crewNumber);
   return (
     <Wrapper>
       <HederWrapper>
@@ -9,7 +11,7 @@ export default function ApplyMainboard() {
         <Header>당신의 크루를 만나보세요!</Header>
       </HederWrapper>
       <SubWrapper>
-        <Image src="/applyMainboard.png" alt="신청폼 전광판" />
+        <Image src={img1} alt="신청폼 전광판" />
         <Header
           style={{
             height: "2.3rem",
@@ -17,23 +19,31 @@ export default function ApplyMainboard() {
             marginTop: "1.6rem",
           }}
         >
-          우리끼리 방구석 비정상회담
+          {name}
         </Header>
         <GreyWrpper>
-          <Grey>서울시 마포구</Grey>
+          <Grey>{location}</Grey>
           <DotSpace style={{ marginLeft: "0" }}>
             <Dot src="/dot.png" alt="점" />
           </DotSpace>
-          <Grey style={{ width: "1.7rem" }}>4회</Grey>
+          <Grey style={{ width: "1.7rem" }}>{numActivities}회</Grey>
           <DotSpace>
             <Dot src="/dot.png" alt="점" />
           </DotSpace>
           <Grey style={{ width: "3rem" }}>2시간</Grey>
         </GreyWrpper>
         <TextWrapper>
-          <Text>2020년 7월 매주 토요일 15:00 - 17:00</Text>
+          {crewNumber === 1 ? (
+            <Text>2020년 7월 매주 토요일 15:00 - 17:00</Text>
+          ) : (
+            <Text>2020년 7월 18일 토요일 17:00 - 20:00</Text>
+          )}
           <TextSubWrapper>
-            <Text>신촌 탐앤탐스 신촌로터리점 소회의실</Text>
+            {crewNumber === 1 ? (
+              <Text>신촌 탐앤탐스 신촌로터리점 소회의실</Text>
+            ) : (
+              <Text>성동구 행당동 행당빈방</Text>
+            )}
             <Header
               style={{
                 width: "9.9rem",
@@ -42,7 +52,7 @@ export default function ApplyMainboard() {
                 marginLeft: "1.5rem",
               }}
             >
-              40,000원
+              {sellPrice}
             </Header>
           </TextSubWrapper>
         </TextWrapper>

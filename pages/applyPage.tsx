@@ -3,15 +3,21 @@ import ApplyMainboard from "@src/components/organism/applyPage/applyMainboard";
 import ApplyForm from "@src/components/organism/applyPage/applyForm";
 import ApplyFinalButton from "@src/components/molecule/applyFinalButton";
 import BankForm from "@src/components/molecule/bankForm";
-
+import { useDetailMainboard } from "@src/components/hooks/detailPageData/detailMainboardData";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export default function Home() {
+export default function ApplyPage() {
+  const router = useRouter();
+  const { detailMainboard, loading, error, fetchData } = useDetailMainboard();
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isMenuClose, setMenuClose] = useState(true);
+  const [isMenuClose, setMenuClose] = useState(false);
   const [isAdmit, setAdmit] = useState(false);
   const [seletBank, setSeletBank] = useState("KB국민은행");
+
+  const crewNumber = Number(router.query.crewNumber);
+  console.log("router.query.crewNumber : ", router.query.crewNumber);
 
   const handleDrawerToggle = () => {
     console.log("페이지 전 isMenuOpen : ", isMenuOpen);
@@ -41,11 +47,6 @@ export default function Home() {
     { id: 11, bank: "카카오뱅크" },
   ];
 
-  const handleSeletBank = (item) => () => {
-    console.log("bankList is : ", item.bank);
-    return 1;
-  };
-
   console.log("Page 은행 : ", seletBank);
   return (
     <Wrapper>
@@ -56,6 +57,7 @@ export default function Home() {
             <Header>은행을 선택해주세요.</Header>
             <Image src="/close.png" alt="닫기창" onClick={handleDrawerToggle} />
           </HeaderWrapper>
+          <CrossLine />
           <BankMenu>
             {bankList.map((item) => {
               return (
@@ -63,7 +65,7 @@ export default function Home() {
                   key={item.id}
                   bank={item.bank}
                   onSelet={setSeletBank}
-                  onClose={handleDrawerToggle}
+                  onClose={setMenuOpen}
                 />
               );
             })}
@@ -71,14 +73,17 @@ export default function Home() {
         </BankWrapper>
       )}
       <Navigator />
-      <ApplyMainboard />
+      <ApplyMainboard
+        crewNumber={crewNumber}
+        {...detailMainboard[crewNumber - 1]}
+      />
       {!isAdmit && <CrossBar src="/crossbar.png" alt="크로스 바 " />}
       {!isAdmit && (
         <ApplyForm
           onAdimt={setAdmit}
           onMenuOpen={setMenuOpen}
-          onMenuClose={isMenuClose}
           seletBank={seletBank}
+          crewNumber={crewNumber}
         />
       )}
       {isAdmit && <Space />}
@@ -86,6 +91,12 @@ export default function Home() {
     </Wrapper>
   );
 }
+
+const CrossLine = styled.div`
+  width: 100%;
+  background-color: #222426;
+  z-index: 999;
+`;
 
 const Image = styled.img`
   width: 2.4rem;
@@ -149,7 +160,7 @@ const Space = styled.div`
 `;
 
 const CrossBar = styled.img`
-  width: 100%;
+  width: 36rem;
   height: 0.6rem;
   object-fit: contain;
   margin-top: 1.8rem;

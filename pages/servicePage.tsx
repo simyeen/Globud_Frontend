@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function ServicePage() {
-
   return (
     <Wrapper>
       <Navigator />
@@ -20,7 +19,7 @@ export default function ServicePage() {
         <Title style={{ marginTop: "4.2rem" }}>글로벗을 처음 접하는</Title>
         <Title>여러분을 위한 가이드.</Title>
       </SubWrapper>
-      <Friends src="/ServiceFriends.png" alt="외국인 친구들 " />
+      <Friends src="/ServiceFriends1.png" alt="외국인 친구들 " />
       <SubWrapper>
         <HeaderWrapper>
           <Blue></Blue>
