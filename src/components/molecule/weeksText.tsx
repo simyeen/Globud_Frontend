@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function WeeksText({ curriculums }) {
-  const { id, strongWord, title, content } = curriculums;
+export default function WeeksText({ detailActivities }) {
+  const { id, name, description } = detailActivities;
 
   return (
     <Wrapper>
       <Title>
-        <Blue>{strongWord}</Blue>
-        {title}
+        <Blue>{id}주차, </Blue>
+        {name}
       </Title>
-      <Content>{content}</Content>
+      <Content>{description}</Content>
     </Wrapper>
   );
 }
@@ -34,7 +34,7 @@ const Content = styled.p`
 `;
 
 const Title = styled.p`
-  width: 26rem;
+  width: 30rem;
   height: 2.1rem;
   font-size: 1.3rem;
   font-weight: bold;

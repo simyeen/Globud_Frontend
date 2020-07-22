@@ -5,8 +5,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function ClientCenterPage() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
   const qnas = [
     {
       id: 1,
@@ -16,7 +14,7 @@ export default function ClientCenterPage() {
     },
     {
       id: 2,
-      header: "글로벗 크루 참여 방법은 어떻게 되나요?",
+      header: "여러개의 크루를 동시에 신청할 수 있나요?",
       content:
         "메인 화면 리스트에서 원하는 크루를 선택하신 후 ‘신청하기’ 버튼을 눌러 폼을 작성해주세요. 다만, 1:1 비율 유지 제도가 존재하기 때문에, 신청 가능 자리가 남아있는지 확인 후 신청 바랍니다. 폼 제출 후 입금이 확인되면 완료 카카오톡 안내를 보내드리겠습니다.",
     },
@@ -36,7 +34,7 @@ export default function ClientCenterPage() {
 
   return (
     <Wrapper>
-      <Navigator onMenuOpen={setMenuOpen} />
+      <Navigator />
       <Header>자주 하는 질문</Header>
       {qnas.map((qna) => (
         <QnaBox key={qna.id} header={qna.header} content={qna.content} />

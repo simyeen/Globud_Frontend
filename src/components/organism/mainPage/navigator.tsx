@@ -6,17 +6,15 @@ import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export default function Navigator({ onMenuOpen }) {
+export default function Navigator() {
   const [isToggle, setToggle] = useState(false);
 
   const handleDrawerToggle = () => {
     console.log("메뉴바 오픈");
     if (isToggle === false) {
       setToggle(true);
-      onMenuOpen(true);
     } else if (isToggle === true) {
       setToggle(false);
-      onMenuOpen(false);
     }
   };
 
@@ -32,9 +30,6 @@ export default function Navigator({ onMenuOpen }) {
         <MenuBar>
           <Menu>
             <Image src="/close.png" alt="닫기창" onClick={handleDrawerToggle} />
-            <Link href="/loginPage">
-              <Text onClick={handleDrawerToggle}>로그인</Text>
-            </Link>
             <Link href="servicePage">
               <Text onClick={handleDrawerToggle}>글로벗 소개</Text>
             </Link>
@@ -60,6 +55,10 @@ export default function Navigator({ onMenuOpen }) {
   );
 }
 
+/* 카카오 로그인 만들며 넣기.
+            <Link href="/loginPage">
+              <Text onClick={handleDrawerToggle}>로그인</Text>
+            </Link>*/
 const Image = styled.img`
   width: 2.4rem;
   height: 2.4rem;
@@ -126,16 +125,3 @@ const SubWrapper = styled.div`
 const Wrapper = styled.div`
   width: 100%;
 `;
-
-/*      <Drawer open={isToggle}>
-        <MenuItem onClick={handleDrawerToggle}>X</MenuItem>
-        <Link href="/loginPage">
-          <MenuItem onClick={handleDrawerToggle}>로그인</MenuItem>
-        </Link>
-        <Link href="servicePage">
-          <MenuItem onClick={handleDrawerToggle}>글로벗 소개</MenuItem>
-        </Link>
-        <Link href="clientCenterPage">
-          <MenuItem onClick={handleDrawerToggle}>자주 묻는 질문</MenuItem>
-        </Link>
-      </Drawer>*/

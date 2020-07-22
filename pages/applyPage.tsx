@@ -1,24 +1,158 @@
 import Navigator from "@src/components/organism/mainPage/navigator";
 import ApplyMainboard from "@src/components/organism/applyPage/applyMainboard";
 import ApplyForm from "@src/components/organism/applyPage/applyForm";
-import ApplyCompleteBotton from "@src/components/molecule/applyCompleteBotton";
+import ApplyFinalButton from "@src/components/molecule/applyFinalButton";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function Home() {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMenuClose, setMenuClose] = useState(true);
+  const [isAdmit, setAdmit] = useState(false);
+  const [seletBank, setSeletBank] = useState("KB국민은행");
 
+  const handleDrawerToggle = () => {
+    console.log("페이지 전 isMenuOpen : ", isMenuOpen);
+    console.log("페이지 전 isMenuClose : ", isMenuClose);
+    if (isMenuOpen === false) {
+      setMenuOpen(true);
+      setMenuClose(false);
+    } else if (isMenuOpen === true) {
+      setMenuOpen(false);
+      setMenuClose(true);
+    }
+    console.log("페이지 후 isMenuOpen : ", isMenuOpen);
+    console.log("페이지 후 isMenuClose : ", isMenuClose);
+  };
+
+  const bankList = [
+    { id: 1, bank: "KB국민은행" },
+    { id: 2, bank: "IBK기업은행" },
+    { id: 3, bank: "농협" },
+    { id: 4, bank: "신한은행" },
+    { id: 5, bank: "우리은행" },
+    { id: 6, bank: "KEB하나은행" },
+    { id: 7, bank: "DGB대구은행" },
+    { id: 8, bank: "BNK부산은행" },
+    { id: 9, bank: "SC제일은행 " },
+    { id: 10, bank: "케이뱅크" },
+    { id: 11, bank: "카카오뱅크" },
+  ];
+
+  const handleSeletBank = (item) => {
+    setSeletBank(item.bank);
+    console.log(item.bank);
+  };
+  console.log("Page 은행 : ", seletBank);
   return (
     <Wrapper>
-      <Navigator onMenuOpen={setMenuOpen} />
-      <ApplyMainboard></ApplyMainboard>
-      <CrossBar src="/crossbar.png" alt="크로스 바 "></CrossBar>
-      <ApplyForm></ApplyForm>
-      <ApplyCompleteBotton></ApplyCompleteBotton>
+      {isMenuOpen && <BankNavigator />}
+      {isMenuOpen && (
+        <BankWrapper>
+          <HeaderWrapper>
+            <Header>은행을 선택해주세요.</Header>
+            <Image src="/close.png" alt="닫기창" onClick={handleDrawerToggle} />
+          </HeaderWrapper>
+          <BankMenu>
+            {bankList.map((item) => {
+              return <TextBox>{item.bank}</TextBox>;
+            })}
+          </BankMenu>
+        </BankWrapper>
+      )}
+      <Navigator />
+      <ApplyMainboard />
+      {!isAdmit && <CrossBar src="/crossbar.png" alt="크로스 바 " />}
+      {!isAdmit && (
+        <ApplyForm
+          onAdimt={setAdmit}
+          onMenuOpen={setMenuOpen}
+          onMenuClose={isMenuClose}
+          {...{ seletBank }}
+        />
+      )}
+      {isAdmit && <Space />}
+      {isAdmit && <ApplyFinalButton />}
     </Wrapper>
   );
 }
+
+const Image = styled.img`
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+`;
+
+const Header = styled.h1`
+  width: 21rem;
+  height: 2.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: -0.4.8rem;
+  color: #000000;
+`;
+
+const TextBox = styled.div`
+  width: 100%;
+  height: 5.4rem;
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: -0.5.6rem;
+  color: #000000;
+
+  padding: 1.6rem 2.2rem;
+  background-color: #ffffff;
+`;
+
+const BankNavigator = styled.div`
+  width: 36rem;
+  height: 64rem;
+  opacity: 0.8;
+  background-color: #222426;
+
+  z-index: 3;
+  position: fixed;
+`;
+
+const BankMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+`;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 36rem;
+  height: 5.4rem;
+
+  background-color: #ffffff;
+  border-radius: 8px 8px 0px 0px;
+  padding: 1.5rem 2.2rem;
+`;
+
+const BankWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 36rem;
+  height: 41.7rem;
+
+  overflow: auto;
+  z-index: 5;
+  position: fixed;
+  top: 22.3rem;
+`;
+
+const Space = styled.div`
+  margin-top: 7rem;
+`;
 
 const CrossBar = styled.img`
   width: 100%;

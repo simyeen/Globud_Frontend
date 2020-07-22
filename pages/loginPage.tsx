@@ -4,11 +4,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function Home() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
   return (
     <Wrapper>
-      <Navigator onMenuOpen={setMenuOpen} />
+      <Navigator />
       <SubWrapper>
         <Space />
         <Header>간편하게 로그인하고, </Header>

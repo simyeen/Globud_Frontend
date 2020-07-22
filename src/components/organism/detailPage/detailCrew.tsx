@@ -1,40 +1,44 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function DetailCrew() {
+export default function DetailCrew(props) {
+  const {
+    img2,
+    img3,
+    description1,
+    description2,
+    numActivities,
+    languages,
+    totalForeignerMember,
+    totalKoreanMember,
+  } = props;
   return (
     <Wrapper>
       <SubWrapper>
         <Text>어떤 크루냐면요...</Text>
-        <CrewImage></CrewImage>
-        <CrewHeader>"글로벌 친구들과 가벼운 수다 + 진지한 이야기!"</CrewHeader>
-        <CrewTitle>
-          '우리끼리 방구석 비정회담'에서는 자기소개, 영화리뷰, 문화토론,
-          시사토론까지 글로벗에서 엄선한 주제들로 총 4주간 글로 벌 친구들과 깊은
-          이야기를 나눌 수 있습니다.
-        </CrewTitle>
-        <CrossBar
-          src="/crossbar.png"
-          alt="크로스바"
-          style={{ height: "0.2rem" }}
-        />
+        <CrewImage src={img3} alt="테스트 이미지" />
+        <CrewHeader>{description1}</CrewHeader>
+        <CrewTitle>{description2}</CrewTitle>
+        <MiniBar />
         <ImageWrapper>
           <Image src="/4weeksCalender.png" alt="4주차" />
           <DotSpace>
-            <Dot src="/Bluedot.png" alt="파란 점" />
+            <Dot src="/blueDot.png" alt="파란 점" />
           </DotSpace>
           <Image src="/englishBook.png" alt="영어활동" />
           <DotSpace>
-            <Dot src="/Bluedot.png" alt="파란 점" />
+            <Dot src="/blueDot.png" alt="파란 점" />
           </DotSpace>
           <Image src="/friends.png" alt="외국인 친구들" />
         </ImageWrapper>
         <TextWrapper>
-          <BlueText style={{ width: "3.0rem" }}>4회차</BlueText>
+          <BlueText style={{ width: "3.0rem" }}>{numActivities}회차</BlueText>
           <BlueText style={{ display: "inline-block", width: "4.8rem" }}>
-            영어 사용
+            {languages} 사용
           </BlueText>
-          <BlueText style={{ width: "4.8rem" }}>6명 제한</BlueText>
+          <BlueText style={{ width: "4.8rem" }}>
+            {totalForeignerMember + totalKoreanMember}명 제한
+          </BlueText>
         </TextWrapper>
       </SubWrapper>
       <CrossBar src="/crossbar.png" alt="크로스바" />
@@ -42,16 +46,22 @@ export default function DetailCrew() {
   );
 }
 
+const MiniBar = styled.div`
+  width: 31.6rem;
+  height: 0.1rem;
+  background-color: #e1e4e7;
+`;
+
 const Dot = styled.img`
-  width: 0.3rem;
-  height: 0.5rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
 `;
 
 const DotSpace = styled.div`
-  padding-left: 0.9rem;
-  padding-right: 0.7rem;
-  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Text = styled.p`

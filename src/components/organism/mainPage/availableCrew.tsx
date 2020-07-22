@@ -2,38 +2,40 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function AvailableCrewList({ availableData }) {
-  const { id, header, title, fee, place } = availableData;
+export default function AvailableCrewList(props) {
+  const {
+    id,
+    img1,
+    name,
+    subName1,
+    location,
+    originalSellPrice,
+    sellPrice,
+    numActivities,
+  } = props;
 
   return (
     <Wrapper>
       <Link href={`/detailPages/detailPage${id}`}>
-        <CrewImage
-          src="/ServiceFriends2.png"
-          alt={`/detailPages/detailPage${id}`}
-        />
+        <CrewImage src={img1} alt={`/detailPages/detailPage${id}`} />
       </Link>
-      <CrewHeader>{header}</CrewHeader>
-      <CrewTitle>{title}</CrewTitle>
+      <CrewHeader>{subName1}</CrewHeader>
+      <CrewTitle>{name}</CrewTitle>
       <CrewImformationWrapper>
-        <CrewFee>{fee}</CrewFee>
-        <DotSpace>
-          <Dot src="/dot.png" alt="점" />
-        </DotSpace>
-        <CrewPlace>{place}</CrewPlace>
+        <CrewFee>
+          {sellPrice} ({numActivities}회)
+        </CrewFee>
+        <Dot src="/dot.png" alt="점" />
+        <CrewPlace>{location}</CrewPlace>
       </CrewImformationWrapper>
     </Wrapper>
   );
 }
 
 const Dot = styled.img`
-  width: 0.5rem;
-  height: 0.3rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
-`;
-
-const DotSpace = styled.div`
-  padding-top: 0.4rem;
 `;
 
 const CrewPlace = styled.p`
@@ -46,7 +48,6 @@ const CrewPlace = styled.p`
   line-height: 1.62;
   letter-spacing: -0.052rem;
   color: #7e8289;
-  margin-left: 1rem;
 `;
 
 const CrewFee = styled.p`
@@ -59,7 +60,6 @@ const CrewFee = styled.p`
   line-height: 1.62;
   letter-spacing: -0.052rem;
   color: #3f66f1;
-  margin-right: 1rem;
 `;
 
 const CrewImformationWrapper = styled.div`

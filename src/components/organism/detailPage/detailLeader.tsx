@@ -1,29 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function DetailLeader() {
+export default function DetailLeader(props) {
+  const { profilePic, name, introduction } = props;
   return (
     <Wrapper>
       <SubWrapper>
         <Header>이 크루의 리더는?</Header>
         <Space />
         <LeaderWrpper>
-          <ImageWrapper></ImageWrapper>
+          <Image src={profilePic} alt="leader picture" />
           <TextWrappr>
             <NameWrapper>
               <Leader>리더</Leader>
-              <Name>박선영</Name>
-              <Logo />
+              <Name>{name}</Name>
+              <Logo src="/bird.png" alt="새 로고" />
             </NameWrapper>
-            <Introduce>
-              신촌 소재 대학 국제학부에 재학중인 25살 투머치 토커 한국인입니다!
-              저도 영어 잘 못하지만 괜찮아요! 친해져요 😉 이런저런 이야기 하면서
-              다같이 즐거운 시간 보내요.
-            </Introduce>
+            <Introduce>{introduction}</Introduce>
           </TextWrappr>
         </LeaderWrpper>
       </SubWrapper>
-
       <CrossBar src="/crossbar.png" alt="크로스 바 "></CrossBar>
     </Wrapper>
   );
@@ -88,11 +84,9 @@ const TextWrappr = styled.div`
   flex-direction: column;
 `;
 
-const ImageWrapper = styled.img`
+const Image = styled.img`
   width: 4.8rem;
   height: 4.8rem;
-  border: solid 1px #222426;
-  background-color: var(--white);
   margin-right: 1.5rem;
 `;
 

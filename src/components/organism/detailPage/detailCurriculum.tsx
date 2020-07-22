@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function DetailCurriculum() {
+export default function DetailCurriculum(props) {
+  const { peopleDescprition, placeDescprition, weeksDescprition } = props;
+  console.log("시발십라", peopleDescprition);
   return (
     <Wrapper>
       <SubWrapper>
@@ -13,37 +15,39 @@ export default function DetailCurriculum() {
             해요.
           </Recommend>
           <Space></Space>
-          <PeopleText>
-            🙌 영어는 잘 못해도 누구보다 자신감은 뿜뿜한 사람!
-          </PeopleText>
-          <PeopleText>😨 외국인 공포증, 이제는 고쳐보고 싶은 사람!</PeopleText>
-          <PeopleText>
-            🤔 다른 나라의 문화는 어떨까? 호기심 가득한 사람!
-          </PeopleText>
+          {peopleDescprition.map((people) => {
+            return (
+              <PeopleText key={people.id}>{people.description}</PeopleText>
+            );
+          })}
           <WhereText>어디서, 어떻게 하나요?</WhereText>
-          <WhereImage />
+          <Box>
+            <BoxContent>
+              <BoxImage src="/curriculumTime.png" alt="커리큘럼 시간" />
+              <BoxText>{placeDescprition[0].description}</BoxText>
+            </BoxContent>
+            <BoxContent>
+              <BoxImage src="/curriculumPlace.png" alt="커리큘럼 장소" />
+              <BoxSubContent>
+                <BoxText>{placeDescprition[1].description}</BoxText>
+                <BoxText style={{ fontSize: "1.1rem" }}>
+                  {placeDescprition[2].description}
+                </BoxText>
+              </BoxSubContent>
+            </BoxContent>
+          </Box>
         </CurriculumWrapper>
         <WeeksWrapper>
           <DotLine src="/dotLine.png" alt="점 라인" />
           <WeeksTextWrapper>
-            <WeeksText>
-              1. 정해진 시간에 신촌 탐앤탐스 소회의실에서 만나요.
-            </WeeksText>
-            <WeeksSubText>시간을 꼭 지켜 방문해주세요.</WeeksSubText>
-            <WeeksText>2. 리더가 오늘의 주제를 소개해 줄거에요.</WeeksText>
-            <WeeksSubText>
-              매주 흥미 진진한 토론 주제가 기다리고 있어요!
-            </WeeksSubText>
-            <WeeksText>3. 한 명당 3-5분의 시간이 주어져요.</WeeksText>
-            <WeeksSubText>
-              각자 생각해온/생각나는 의견을 영어로 편하게 말해보아요.{" "}
-            </WeeksSubText>
-            <WeeksText>
-              4. 각자 생각해온 의견을 주고 받으며 토론해요.{" "}
-            </WeeksText>
-            <WeeksSubText>
-              4주간 함께 다양한 이야기를 나누다 보면 이미 우리는 짱친!
-            </WeeksSubText>
+            {weeksDescprition.map((weeks) => {
+              return (
+                <div>
+                  <WeeksText>{weeks.description1} </WeeksText>
+                  <WeeksSubText> {weeks.description2} </WeeksSubText>
+                </div>
+              );
+            })}
           </WeeksTextWrapper>
         </WeeksWrapper>
 
@@ -90,7 +94,7 @@ const DetailHeader = styled.p`
 `;
 
 const WeeksSubText = styled.p`
-  width: 21rem;
+  width: 25rem;
   height: 1.5rem;
   font-size: 0.9rem;
   font-weight: 500;
@@ -142,10 +146,51 @@ const Space = styled.div`
   margin-top: 1.5rem;
 `;
 
-const WhereImage = styled.img`
+const BoxImage = styled.img`
+  width: 2.4rem;
+  height: 2.5rem;
+  object-fit: contain;
+`;
+
+const BoxText = styled.p`
+  width: 25rem;
+  height: 2.1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.62;
+  letter-spacing: -0.052rem;
+  color: #555961;
+
+  margin-bottom: 0;
+`;
+
+const BoxSubContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const BoxContent = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   width: 31.6rem;
   height: 9.8rem;
-  object-fit: contain;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.01rem 0.3rem 0 #c5cace;
+  border: solid 0.1rem #e1e4e7;
+  background-color: #f6f6f6;
+
+  text-align: left;
+
+  padding: 1.4rem 4.2rem 1.5rem 1rem;
   margin-top: 1.7rem;
   margin-bottom: 3.1rem;
 `;

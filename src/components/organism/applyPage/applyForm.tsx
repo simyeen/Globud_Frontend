@@ -1,7 +1,10 @@
+import BankBarOpen from "@src/components/molecule/bankBarOpen";
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
-export default function AvailableCrewList() {
+export default function AvailableCrewList(props) {
+  const { onAdimt, onMenuOpen, onMenuClose, seletBank } = props;
   const [isFirstChecked, setFirstChecked] = useState(false);
   const [isSecondChecked, setSecondChecked] = useState(false);
 
@@ -12,7 +15,6 @@ export default function AvailableCrewList() {
       setFirstChecked(false);
     }
   };
-
   const handleSecondCheckBox = () => {
     if (isSecondChecked === false) {
       setSecondChecked(true);
@@ -20,6 +22,83 @@ export default function AvailableCrewList() {
       setSecondChecked(false);
     }
   };
+
+  const [form, setForm] = useState({
+    name: "",
+    depositBank: { seletBank },
+    depositNum: "",
+    nation: "",
+    email: "",
+    phone: "",
+    crew: 2,
+  });
+
+  const handleFormChange = (e) => {
+    const { type, name, value } = e.target;
+    console.log("handleFormChange : ", type, name, value);
+    setForm({
+      ...form,
+      [name]: name === "phone" ? value.slice(0, 11) : value,
+    });
+    console.log(form);
+  };
+
+  const isValidForm = () => {
+    console.log("isValidForm : ", form);
+    if (
+      form.name === "" ||
+      form.depositNum === "" ||
+      form.nation === "" ||
+      form.email === "" ||
+      form.phone === ""
+    ) {
+      alert("모든 항목을 입력해 주십시오.");
+      return false;
+    }
+    if (form.phone.length !== 11) {
+      alert("전화번호를 올바른 형식으로 입력해주세요!");
+      return false;
+    }
+    return true;
+  };
+
+  const handlePost = () => {
+    console.log("post 보내기 : ", form);
+    axios
+      .post("https://globud.co.kr/api/applies/", form)
+      .then((response) => {
+        console.log("데이터 전송 성공.", form);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+        console.log("error in ", form);
+        console.log("데이터 전송 실패.");
+      });
+  };
+
+  let agreements = { agreement1: 1, agreement2: 1 };
+
+  const handleSubmit = () => {
+    if (isValidForm() === false) {
+      return;
+    }
+    if (isValidForm() === true && (!isFirstChecked || !isSecondChecked)) {
+      console.log(form, isFirstChecked, isSecondChecked);
+      console.log("not validForm");
+      alert("약관에 동의하여 주십시오.");
+      return;
+    } else if (isValidForm() === true && isFirstChecked && isSecondChecked) {
+      alert(`${form.name}님 신청완료 되었습니다.`);
+      console.log("handleSubmit : ", form);
+      form.depositBank = { seletBank };
+      setForm({ ...form, ...agreements });
+      console.log(form);
+      handlePost();
+      onAdimt(true);
+    }
+  };
+  console.log("현재 은행 : ", seletBank);
 
   return (
     <Wrapper>
@@ -50,35 +129,76 @@ export default function AvailableCrewList() {
         <Header>확인하셨다면, 정보를 입력해주세요.</Header>
 
         <Text>이름 (예금주명)</Text>
-        <Content name="content" placeholder="    전소영"></Content>
-
-        <Text>입금하신 계좌번호</Text>
-        <Content name="account" placeholder="    1002 348 536694"></Content>
+        <Content
+          type="text"
+          name="name"
+          value={form.name}
+          placeholder="홍길동"
+          onChange={handleFormChange}
+        ></Content>
 
         <Text>국적</Text>
-        <Content name="country" placeholder="    대한민국"></Content>
+        <Content
+          type="text"
+          name="nation"
+          value={form.nation}
+          placeholder="대한민국"
+          onChange={handleFormChange}
+        ></Content>
+
+        <Text>입금하신 계좌번호</Text>
+        <BankWrapper>
+          <BankSubWrapper>
+            <Text
+              style={{
+                color: "#555961",
+                fontWeight: "normal",
+                marginTop: "0rem",
+              }}
+            >
+              {seletBank}
+            </Text>
+            <BankBarOpen {...{ onMenuOpen }} {...{ onMenuClose }} />
+          </BankSubWrapper>
+          <HorizonBar />
+          <Content
+            type="number"
+            name="depositNum"
+            value={form.depositNum}
+            placeholder="'-'  는 빼고 입력해주세요."
+            onChange={handleFormChange}
+            style={{
+              marginTop: "0.4rem",
+              border: "0",
+              width: "19.4rem",
+              height: "3.5rem",
+            }}
+          />
+        </BankWrapper>
 
         <Text>이메일</Text>
-        <Content name="email" placeholder="    nattasoy@gmail.com"></Content>
+        <Content
+          type="email"
+          name="email"
+          value={form.email}
+          placeholder="globud@gmail.com"
+          onChange={handleFormChange}
+        ></Content>
 
         <Text>전화번호</Text>
         <Content
-          name="callNumber"
-          placeholder="    - 는 빼고 입력해주세요."
-        ></Content>
-
+          type="number"
+          name="phone"
+          value={form.phone}
+          placeholder="'-'  는 빼고 입력해주세요."
+          onChange={handleFormChange}
+        />
         <CheckBoxWrapper>
-          {!isFirstChecked && (
-            <CheckBox
-              src="/unChecked.png"
-              alt="체크박스"
-              onClick={handleFirstCheckBox}
-            />
-          )}
+          <CheckBox onClick={handleFirstCheckBox} />
           {isFirstChecked && (
-            <CheckBox
+            <Check
               src="/checked.png"
-              alt="체크박스"
+              alt="체크"
               onClick={handleFirstCheckBox}
             />
           )}
@@ -88,17 +208,11 @@ export default function AvailableCrewList() {
           </Text>
         </CheckBoxWrapper>
         <CheckBoxWrapper>
-          {!isSecondChecked && (
-            <CheckBox
-              src="/unChecked.png"
-              alt="체크박스"
-              onClick={handleSecondCheckBox}
-            />
-          )}
+          <CheckBox onClick={handleSecondCheckBox} />
           {isSecondChecked && (
-            <CheckBox
+            <Check
               src="/checked.png"
-              alt="체크박스"
+              alt="체크"
               onClick={handleSecondCheckBox}
             />
           )}
@@ -106,15 +220,41 @@ export default function AvailableCrewList() {
             상기 계좌로 입금을 완료하셨으면, 체크해주세요.
           </Text>
         </CheckBoxWrapper>
+
+        <ApplyCompleteButton
+          src="/applyComplete.png"
+          alt="신청 완료 버튼"
+          onClick={handleSubmit}
+        />
       </SubWrapper>
     </Wrapper>
   );
 }
 
-const CheckBox = styled.img`
+const ApplyCompleteButton = styled.img`
+  width: 31.4rem;
+  height: 6rem;
+  object-fit: contain;
+  margin-top: 1.3rem;
+  margin-bottom: 3.8rem;
+`;
+
+const Check = styled.img`
   width: 1.6rem;
   height: 1.6rem;
 
+  position: absolute;
+  z-index: 1;
+`;
+
+const CheckBox = styled.div`
+  width: 2rem;
+  height: 1.6rem;
+  border-radius: 0.3rem;
+  border: solid 0.1rem #e1e4e7;
+  background-color: #ffffff;
+
+  position: relative;
   margin-right: 1rem;
 `;
 
@@ -127,10 +267,26 @@ const CheckBoxWrapper = styled.div`
   margin-left: 1rem;
 `;
 
-const Content = styled.input`
+const HorizonBar = styled.div`
+  border-right: solid 0.1rem #3f66f1;
+`;
+
+const BankSubWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 11rem;
+  height: 2.7rem;
+
+  margin-top: 0.8rem;
+  border: solid 0rem #3f66f1;
+`;
+
+const BankWrapper = styled.div`
+  display: flex;
   width: 31.4rem;
   height: 4.5rem;
 
+  padding-left: 1.5rem;
   font-size: 1.3rem;
   font-weight: normal;
   font-stretch: normal;
@@ -140,6 +296,27 @@ const Content = styled.input`
 
   border-radius: 0.8rem;
   border: solid 0.115rem #3f66f1;
+  outline: none;
+
+  z-index: 1;
+  position: relative;
+`;
+
+const Content = styled.input`
+  width: 31.4rem;
+  height: 4.5rem;
+
+  padding-left: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.62;
+  letter-spacing: -0.052rem;
+
+  border-radius: 0.8rem;
+  border: solid 0.115rem #3f66f1;
+  outline: none;
 `;
 
 const Blue = styled.strong`

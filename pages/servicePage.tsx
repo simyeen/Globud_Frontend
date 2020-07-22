@@ -4,11 +4,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function ServicePage() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
     <Wrapper>
-      <Navigator onMenuOpen={setMenuOpen} />
+      <Navigator />
       <MainBoardImage src="/ServiceMainboard.png" alt="메인 전광판" />
       <SubWrapper>
         <Slogan src="/ServiceSlogan.png" alt="slogan" />
@@ -78,7 +77,6 @@ const Content = styled.p`
   color: #222426;
 `;
 
-//밑줄 어떻게 해결할지 고민해보자!
 const Header2 = styled.div`
   width: 23.3rem;
   height: 2.3rem;

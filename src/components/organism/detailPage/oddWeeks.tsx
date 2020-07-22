@@ -3,13 +3,14 @@ import WeeksText from "@src/components/molecule/weeksText";
 import React from "react";
 import styled from "styled-components";
 
-export default function OddWeeksText({ curriculums }) {
+export default function OddWeeksText({ detailActivities }) {
+  const { img } = detailActivities;
   return (
     <Wrapper>
       <ImageBox>
-        <Image src="/ServiceFriends.png" alt="테스트 이미지"></Image>
+        <Image src={img} alt="테스트 이미지"></Image>
       </ImageBox>
-      <WeeksText {...{ curriculums }} />
+      <WeeksText {...{ detailActivities }} />
     </Wrapper>
   );
 }

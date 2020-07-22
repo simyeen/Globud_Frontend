@@ -5,20 +5,68 @@ import DetailMainboard from "@src/components/organism/detailPage/detailMainboard
 import DetailCrew from "@src/components/organism/detailPage/detailCrew";
 import DetailLeader from "@src/components/organism/detailPage/detailLeader";
 import DetailCurriculum from "@src/components/organism/detailPage/detailCurriculum";
-import WeeksList from "@src/components/organism/detailPage/WeeksList";
+import DetailWeeksList from "@src/components/organism/detailPage/detailWeeksList";
 import DetailWorning from "@src/components/organism/detailPage/detailWorning";
+
+import { useDetailMainboard } from "@src/components/hooks/detailPageData/detailMainboardData";
+import { useDetailLeader } from "@src/components/hooks/detailPageData/detailLeaderData";
+import { useDetailActivities } from "@src/components/hooks/detailPageData/detailActivityList/Crew2";
 
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export default function DetailPage() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+export default function DetailPage1() {
+  const { detailMainboard, loading, error, fetchData } = useDetailMainboard();
+  const { detailLeader } = useDetailLeader();
+  const { detailActivities } = useDetailActivities();
+
+  console.log("detailMainboardData testing : ", detailMainboard);
+  console.log("detailLeader testing : ", detailLeader);
+  console.log("detailActivities testing : ", detailActivities);
+
+  const peopleDescprition = [
+    { id: 1, description: "🍽 난, 요리왕 비룡이야! 요리는 자신있는 사람!" },
+    { id: 2, description: "🙌 어디서나 랜덤을 즐기는 사람!" },
+    {
+      id: 3,
+      description: "👋 말만 하는 건 싫어! 몸으로 부딪히며 친해지고픈 사람!",
+    },
+  ];
+
+  const placeDescprition = [
+    { id: 1, description: "2020년 7월 18일 토요일 17:00 - 20:00" },
+    { id: 2, description: "성동구 행당동 행당빈방" },
+    { id: 3, description: "24, Gosanja-ro 6-gil, Seongdong-gu, Seoul" },
+  ];
+
+  const weeksDescprition = [
+    {
+      id: 1,
+      description1: "1. 정해진 시간에 행당빈방에서 만나요.",
+      description2: "시간을 꼭 지켜 방문해주세요.",
+    },
+    {
+      id: 2,
+      description1: "2. 리더와 함께 요리 하나를 정하고 재료를 사옵니다.",
+      description2:
+        "재료를 구하러 가는 여정을 함께 하며 아이스 브레이킹은 자연스럽게.",
+    },
+    {
+      id: 3,
+      description1: "3. 외국인 친구와 짝을 이뤄 요리를 완성해요.",
+      description2: "요리법을 따라 천천히, 만드는 동안 이미 친해져있을 거예요.",
+    },
+    {
+      id: 4,
+      description1: "4. 함께 식사하며 스몰톡을 나눠봐요.",
+      description2: "재미있는 게임과 함께하면 재미가 두배!",
+    },
+  ];
 
   return (
     <Wrapper>
-      <Navigator onMenuOpen={setMenuOpen} />
-      DetailPage2입니다
-      <DetailMainboard />
+      <Navigator />
+      <DetailMainboard {...detailMainboard[1]} />
       <DetailNavigator>
         <a href="#Crew">
           <Image src="/NavCrew.png" alt="크루 소개" />
@@ -33,17 +81,22 @@ export default function DetailPage() {
           <Image src="/NavWaring.png" alt="주의사항" />
         </a>
       </DetailNavigator>
+      <MiniBar />
       <ApplyButton />
       <a id="Crew">
-        <DetailCrew />
+        <DetailCrew {...detailMainboard[1]} />
       </a>
       <a id="Leader">
-        <DetailLeader />
+        <DetailLeader {...detailLeader[1]} />
       </a>
       <a id="Curriculum">
-        <DetailCurriculum />
+        <DetailCurriculum
+          {...{ peopleDescprition }}
+          {...{ placeDescprition }}
+          {...{ weeksDescprition }}
+        />
       </a>
-      <WeeksList />
+      <DetailWeeksList {...{ detailActivities }} />
       <CrossBar src="/crossbar.png" alt="크로스 바 "></CrossBar>
       <a id="Warning">
         <DetailWorning />
@@ -51,6 +104,12 @@ export default function DetailPage() {
     </Wrapper>
   );
 }
+
+const MiniBar = styled.div`
+  width: 31.6rem;
+  height: 0.1rem;
+  background-color: #e1e4e7;
+`;
 
 const Image = styled.img`
   width: 5rem;

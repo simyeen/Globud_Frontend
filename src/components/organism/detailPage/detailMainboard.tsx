@@ -1,24 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function DetailMainBoard() {
+export default function DetailMainBoard(props) {
+  const {
+    img2,
+    name,
+    subName2,
+    originalSellPrice,
+    sellPrice,
+    location,
+    numActivities,
+  } = props;
   return (
     <Wrapper>
-      <CrewImage src="/mainboard.png" alt="테스트 이미지" />
+      <CrewImage src={img2} alt="테스트 이미지" />
       <SubWrapper>
-        <CrewHeader>영어로 이런 이야기까지? 야 너두 할 수 있어!</CrewHeader>
-        <CrewTitle>우리끼리 방구석 비정상회담</CrewTitle>
+        <CrewHeader>{subName2}</CrewHeader>
+        <CrewTitle>{name}</CrewTitle>
         <CrewImformationWrapper>
           <CrewEvent>오픈특가</CrewEvent>
-          <CrewFee>40,000원</CrewFee>
+          <CrewFee>{sellPrice}</CrewFee>
         </CrewImformationWrapper>
         <CrewImformationWrapper>
-          <GrayText style={{ width: "8.0rem" }}>서울시 마포구</GrayText>
           <DotSpace>
+            <GrayText style={{ width: "8.0rem" }}>{location}</GrayText>
             <Dot src="/dot.png" alt="점" />
-          </DotSpace>
-          <GrayText style={{ width: "2.0rem" }}>4회</GrayText>
-          <DotSpace>
+            <GrayText style={{ width: "2.0rem" }}>{numActivities}회</GrayText>
             <Dot src="/dot.png" alt="점" />
           </DotSpace>
           <GrayText style={{ width: "3.2rem" }}>2시간</GrayText>
@@ -37,15 +44,15 @@ const CrossBar = styled.img`
 `;
 
 const Dot = styled.img`
-  width: 0.3rem;
-  height: 0.3rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
+  margin-bottom: 1rem;
 `;
 
 const DotSpace = styled.div`
-  padding-left: 0.9rem;
-  padding-right: 0.7rem;
-  padding-top: 0.4rem;
+  display: flex;
+  justify-content: center;
 `;
 
 const GrayText = styled.p`

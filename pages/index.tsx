@@ -1,47 +1,34 @@
 import Navigator from "@src/components/organism/mainPage/navigator";
 import AvailableCrewList from "@src/components/organism/mainPage/availableCrew";
+import { useAvailableList } from "@src/components/hooks/mainPageData/availableList";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function Home() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const availableDatas = [
-    {
-      id: 1,
-      header: "영어로 진행되는 흥미진진 토론 현장에 초대합니다!",
-      title: "우리끼리 방구석 비정상회담",
-      fee: "40,000 원 (4회)",
-      place: "서울시 마포구",
-    },
-    {
-      id: 2,
-      header: "전세계 대표 음식, 만들어 먹어요!",
-      title: "다같이 만드는 세계 요리",
-      fee: "35,000 원 (1회)",
-      place: "서울시 성동구",
-    },
-  ];
+export default function MainPage() {
+  const { availableList, loading, error, fetchData } = useAvailableList();
+  console.log("api 테스트 : ", availableList);
 
   return (
     <Wrapper>
-      <Navigator onMenuOpen={setMenuOpen} />
+      <Navigator />
       <SubWrapper>
         <Link href="/servicePage">
           <MainBoardImage src="/mainboard.png" alt="메인 전광판" />
         </Link>
         <PostCardWrapper>
           <PostCardHeader>모집중인 크루</PostCardHeader>
-          {availableDatas.map((availableData) => (
-            <AvailableCrewList key={availableData.id} {...{ availableData }} />
-          ))}
+          {availableList &&
+            availableList.map((item) => {
+              return <AvailableCrewList key={item.id} {...item} />;
+            })}
         </PostCardWrapper>
       </SubWrapper>
     </Wrapper>
   );
 }
+export const MemorizedMainPage = React.memo(MainPage);
 
 const PostCardHeader = styled.h1`
   float: left;
