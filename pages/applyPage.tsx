@@ -2,6 +2,7 @@ import Navigator from "@src/components/organism/mainPage/navigator";
 import ApplyMainboard from "@src/components/organism/applyPage/applyMainboard";
 import ApplyForm from "@src/components/organism/applyPage/applyForm";
 import ApplyFinalButton from "@src/components/molecule/applyFinalButton";
+import BankForm from "@src/components/molecule/bankForm";
 
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -40,10 +41,11 @@ export default function Home() {
     { id: 11, bank: "카카오뱅크" },
   ];
 
-  const handleSeletBank = (item) => {
-    setSeletBank(item.bank);
-    console.log(item.bank);
+  const handleSeletBank = (item) => () => {
+    console.log("bankList is : ", item.bank);
+    return 1;
   };
+
   console.log("Page 은행 : ", seletBank);
   return (
     <Wrapper>
@@ -56,7 +58,14 @@ export default function Home() {
           </HeaderWrapper>
           <BankMenu>
             {bankList.map((item) => {
-              return <TextBox>{item.bank}</TextBox>;
+              return (
+                <BankForm
+                  key={item.id}
+                  bank={item.bank}
+                  onSelet={setSeletBank}
+                  onClose={handleDrawerToggle}
+                />
+              );
             })}
           </BankMenu>
         </BankWrapper>
@@ -69,7 +78,7 @@ export default function Home() {
           onAdimt={setAdmit}
           onMenuOpen={setMenuOpen}
           onMenuClose={isMenuClose}
-          {...{ seletBank }}
+          seletBank={seletBank}
         />
       )}
       {isAdmit && <Space />}
@@ -96,27 +105,12 @@ const Header = styled.h1`
   color: #000000;
 `;
 
-const TextBox = styled.div`
-  width: 100%;
-  height: 5.4rem;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.57;
-  letter-spacing: -0.5.6rem;
-  color: #000000;
-
-  padding: 1.6rem 2.2rem;
-  background-color: #ffffff;
-`;
-
 const BankNavigator = styled.div`
-  width: 36rem;
-  height: 64rem;
+  width: 100%;
+  height: 100%;
   opacity: 0.8;
   background-color: #222426;
-
+  overflow: scroll;
   z-index: 3;
   position: fixed;
 `;
@@ -163,7 +157,8 @@ const CrossBar = styled.img`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: fit-content;
+  height: 100%;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function DetailLeader(props) {
-  const { profilePic, name, introduction } = props;
+  const { profilePic, name, introduction, crew } = props;
   return (
     <Wrapper>
       <SubWrapper>
@@ -13,7 +13,7 @@ export default function DetailLeader(props) {
           <TextWrappr>
             <NameWrapper>
               <Leader>리더</Leader>
-              <Name>{name}</Name>
+              {crew === 1 ? <Name>{name}</Name> : <LongName>{name}</LongName>}
               <Logo src="/bird.png" alt="새 로고" />
             </NameWrapper>
             <Introduce>{introduction}</Introduce>
@@ -47,6 +47,18 @@ const Introduce = styled.div`
 const Logo = styled.img`
   width: 2.4rem;
   height: 2.4rem;
+`;
+
+const LongName = styled.p`
+  width: 17rem;
+  height: 2.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: -0.048rem;
+  color: #222426;
 `;
 
 const Name = styled.p`

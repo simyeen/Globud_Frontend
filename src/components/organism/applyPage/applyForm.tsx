@@ -7,6 +7,9 @@ export default function AvailableCrewList(props) {
   const { onAdimt, onMenuOpen, onMenuClose, seletBank } = props;
   const [isFirstChecked, setFirstChecked] = useState(false);
   const [isSecondChecked, setSecondChecked] = useState(false);
+  var depositBank = seletBank;
+
+  console.log("depositBank is : ", depositBank);
 
   const handleFirstCheckBox = () => {
     if (isFirstChecked === false) {
@@ -25,8 +28,8 @@ export default function AvailableCrewList(props) {
 
   const [form, setForm] = useState({
     name: "",
-    depositBank: { seletBank },
     depositNum: "",
+    depositBank: "기본은행",
     nation: "",
     email: "",
     phone: "",
@@ -47,7 +50,6 @@ export default function AvailableCrewList(props) {
     console.log("isValidForm : ", form);
     if (
       form.name === "" ||
-      form.depositNum === "" ||
       form.nation === "" ||
       form.email === "" ||
       form.phone === ""
@@ -91,7 +93,6 @@ export default function AvailableCrewList(props) {
     } else if (isValidForm() === true && isFirstChecked && isSecondChecked) {
       alert(`${form.name}님 신청완료 되었습니다.`);
       console.log("handleSubmit : ", form);
-      form.depositBank = { seletBank };
       setForm({ ...form, ...agreements });
       console.log(form);
       handlePost();
@@ -153,7 +154,7 @@ export default function AvailableCrewList(props) {
               style={{
                 color: "#555961",
                 fontWeight: "normal",
-                marginTop: "0rem",
+                marginTop: "0.1rem",
               }}
             >
               {seletBank}

@@ -30,10 +30,10 @@ export default function Navigator() {
         <MenuBar>
           <Menu>
             <Image src="/close.png" alt="닫기창" onClick={handleDrawerToggle} />
-            <Link href="servicePage">
+            <Link href="/servicePage">
               <Text onClick={handleDrawerToggle}>글로벗 소개</Text>
             </Link>
-            <Link href="clientCenterPage">
+            <Link href="/clientCenterPage">
               <Text onClick={handleDrawerToggle}>자주 묻는 질문</Text>
             </Link>
           </Menu>

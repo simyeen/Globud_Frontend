@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 export default function WeeksText({ detailActivities }) {
-  const { id, name, description } = detailActivities;
+  const { id, name, description, crew } = detailActivities;
 
   return (
     <Wrapper>
       <Title>
-        <Blue>{id}주차, </Blue>
+        <Blue>{crew === 1 ? `${id}주차, ` : `${id}번째, `}</Blue>
         {name}
       </Title>
       <Content>{description}</Content>
