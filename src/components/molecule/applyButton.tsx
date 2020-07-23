@@ -16,19 +16,32 @@ export default function ToApplyPage({ crew }) {
 
   return (
     <Wrapper>
-      <ApplyButton
-        src="/applyButton.png"
-        alt="버튼사진"
-        onClick={handleRouter}
-      ></ApplyButton>
+      <ApplyButton onClick={handleRouter}>
+        <Text>크루 예약하기</Text>
+      </ApplyButton>
     </Wrapper>
   );
 }
 
-const ApplyButton = styled.img`
-  width: 100%;
+const Text = styled.p`
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: -0.026rem;
+  margin-top: 1.75rem;
+  color: #ffffff;
+`;
+
+const ApplyButton = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 31.4rem;
   height: 6rem;
-  object-fit: contain;
+  border-radius: 8px;
+  background-color: #3c7dfa;
+
   margin-top: 1.3rem;
 `;
 

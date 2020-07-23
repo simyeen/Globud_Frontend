@@ -36,7 +36,7 @@ export default function ApplyPage() {
   const bankList = [
     { id: 1, bank: "KB국민은행" },
     { id: 2, bank: "IBK기업은행" },
-    { id: 3, bank: "농협" },
+    { id: 3, bank: "NH농협은행" },
     { id: 4, bank: "신한은행" },
     { id: 5, bank: "우리은행" },
     { id: 6, bank: "KEB하나은행" },
@@ -77,7 +77,6 @@ export default function ApplyPage() {
         crewNumber={crewNumber}
         {...detailMainboard[crewNumber - 1]}
       />
-
       {!isAdmit && <CrossBar src="/crossbar.png" alt="크로스 바 " />}
       {!isAdmit && (
         <ApplyForm

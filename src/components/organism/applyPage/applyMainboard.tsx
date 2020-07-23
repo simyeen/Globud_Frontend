@@ -115,7 +115,7 @@ const GreyWrpper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 31.4rem;
+  width: 100%;
   height: 12rem;
   border-radius: 0.8rem;
 `;
