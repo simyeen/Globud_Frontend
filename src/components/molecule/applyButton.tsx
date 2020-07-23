@@ -17,10 +17,10 @@ export default function ToApplyPage({ crew }) {
   return (
     <Wrapper>
       <ApplyButton
-        src="/applyButton.png"
-        alt="신청 버튼"
+        src="/ServiceFriends1.png"
+        alt="버튼사진"
         onClick={handleRouter}
-      />
+      ></ApplyButton>
     </Wrapper>
   );
 }
