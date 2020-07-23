@@ -4,6 +4,7 @@ import styled from "styled-components";
 export default function ApplyMainboard(props) {
   const { crewNumber, img1, name, sellPrice, location, numActivities } = props;
   console.log(crewNumber);
+  console.log("name : ", name);
   return (
     <Wrapper>
       <HederWrapper>

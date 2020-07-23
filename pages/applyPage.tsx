@@ -40,11 +40,11 @@ export default function ApplyPage() {
     { id: 4, bank: "신한은행" },
     { id: 5, bank: "우리은행" },
     { id: 6, bank: "KEB하나은행" },
-    { id: 7, bank: "DGB대구은행" },
+    { id: 7, bank: "카카오뱅크" },
     { id: 8, bank: "BNK부산은행" },
     { id: 9, bank: "SC제일은행 " },
     { id: 10, bank: "케이뱅크" },
-    { id: 11, bank: "카카오뱅크" },
+    { id: 11, bank: "DGB대구은행" },
   ];
 
   console.log("Page 은행 : ", seletBank);
@@ -113,7 +113,7 @@ const Header = styled.h1`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: -0.4.8rem;
+  letter-spacing: -0.048rem;
   color: #000000;
 `;
 
@@ -138,7 +138,6 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   width: 36rem;
   height: 5.4rem;
-
   background-color: #ffffff;
   border-radius: 0.8rem 0.8rem 0px 0px;
   padding: 1.5rem 2.2rem;
@@ -147,12 +146,13 @@ const HeaderWrapper = styled.div`
 const BankWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 36rem;
+  height: 80%;
 
   overflow: auto;
   z-index: 5;
   position: fixed;
-  padding-bottom: 3.8rem;
+
   top: 22.3rem;
 `;
 
@@ -161,13 +161,15 @@ const Space = styled.div`
 `;
 
 const CrossBar = styled.img`
-  width: 36rem;
+  width: 100%;
   height: 0.6rem;
   object-fit: contain;
   margin-top: 1.8rem;
 `;
 
 const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;
