@@ -77,6 +77,7 @@ export default function ApplyPage() {
         crewNumber={crewNumber}
         {...detailMainboard[crewNumber - 1]}
       />
+
       {!isAdmit && <CrossBar src="/crossbar.png" alt="크로스 바 " />}
       {!isAdmit && (
         <ApplyForm
@@ -168,8 +169,6 @@ const CrossBar = styled.img`
 `;
 
 const Wrapper = styled.div`
-  width: 36rem;
-
   overflow: auto;
   display: flex;
   flex-direction: column;
