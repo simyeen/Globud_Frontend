@@ -12,7 +12,6 @@ export default function MainPage() {
 
   return (
     <Wrapper>
-      aa
       <Navigator />
       <SubWrapper>
         <Link href="/servicePage">
