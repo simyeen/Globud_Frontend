@@ -26,7 +26,7 @@ export default function ToApplyPage({ crew }) {
 }
 
 const ApplyButton = styled.img`
-  width: 36rem;
+  width: 31.4rem;
   height: 6rem;
   object-fit: contain;
   margin-top: 1.3rem;
