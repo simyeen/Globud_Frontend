@@ -26,7 +26,7 @@ export default function ToApplyPage({ crew }) {
 }
 
 const ApplyButton = styled.img`
-  width: 31.4rem;
+  width: 100%;
   height: 6rem;
   object-fit: contain;
   margin-top: 1.3rem;
@@ -35,7 +35,7 @@ const ApplyButton = styled.img`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 36rem;
+  width: 100%;
   height: 9.7rem;
   box-shadow: 0 -0.4rem 0.4rem 0 rgba(126, 130, 137, 0.1);
   background-color: var(--white);
