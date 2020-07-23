@@ -31,8 +31,6 @@ export default function QnaClose({ header, onOpen }) {
   );
 }
 
-//
-//
 const Arrow = styled.img`
   width: 2.4rem;
   height: 2.4rem;
@@ -41,7 +39,7 @@ const Arrow = styled.img`
 `;
 
 const Header = styled.p`
-  width: 30.3rem;
+  width: 100%;
   font-size: 1.3rem;
   font-weight: bold;
   font-stretch: normal;

@@ -63,7 +63,7 @@ export default function DetailCurriculum(props) {
 }
 
 const DetailExplain = styled.p`
-  width: 31.5rem;
+  width: 100%;
   height: 6.4rem;
   font-size: 1.3rem;
   font-weight: normal;
@@ -78,7 +78,7 @@ const DetailExplain = styled.p`
 `;
 
 const DetailHeader = styled.p`
-  width: 31.6rem;
+  width: 100%;
   height: 2.3rem;
 
   font-size: 1.6rem;
@@ -93,7 +93,7 @@ const DetailHeader = styled.p`
 `;
 
 const WeeksSubText = styled.p`
-  width: 25rem;
+  width: 100%;
   height: 1.5rem;
   font-size: 0.9rem;
   font-weight: 500;
@@ -108,9 +108,9 @@ const WeeksSubText = styled.p`
 `;
 
 const WeeksText = styled.p`
-  width: 27.4rem;
+  width: 100%;
   height: 2.1rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -152,7 +152,7 @@ const BoxImage = styled.img`
 `;
 
 const BoxText = styled.p`
-  width: 25rem;
+  width: 100%;
   height: 2.1rem;
   font-size: 1.3rem;
   font-weight: 500;
@@ -180,7 +180,7 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  width: 31.6rem;
+  width: 100%;
   height: 9.8rem;
   border-radius: 0.8rem;
   box-shadow: 0 0.01rem 0.3rem 0 #c5cace;
@@ -189,13 +189,13 @@ const Box = styled.div`
 
   text-align: left;
 
-  padding: 1.4rem 4.2rem 1.5rem 1rem;
+  padding: 1.4rem 1.2rem 1.5rem 1rem;
   margin-top: 1.7rem;
   margin-bottom: 3.1rem;
 `;
 
 const WhereText = styled.p`
-  width: 31.6rem;
+  width: 100%;
   height: 2.3rem;
   font-size: 1.6rem;
   font-weight: bold;
@@ -208,7 +208,7 @@ const WhereText = styled.p`
 `;
 
 const PeopleText = styled.p`
-  width: 28.6rem;
+  width: 100%;
   height: 2.2rem;
   font-size: 1.25rem;
   font-weight: 500;
@@ -221,7 +221,7 @@ const PeopleText = styled.p`
 `;
 
 const Recommend = styled.p`
-  width: 31.6rem;
+  width: 100%;
   height: 2.3rem;
   font-size: 1.6rem;
   font-weight: bold;
@@ -235,7 +235,7 @@ const Recommend = styled.p`
 `;
 
 const Title = styled.p`
-  width: 31.5rem;
+  width: 100%;
   height: 2.2rem;
   font-size: 1.4rem;
   font-weight: 500;
@@ -249,7 +249,7 @@ const Title = styled.p`
 `;
 
 const Header = styled.h3`
-  width: 31.4rem;
+  width: 100%;
   height: 2.9rem;
   font-size: 2rem;
   font-weight: bold;

@@ -22,13 +22,13 @@ const Sapce = styled.div`
 `;
 
 const Image = styled.img`
-  width: 31.4rem;
+  width: 100%;
   height: 12.3rem;
   object-fit: contain;
 `;
 
 const Header2 = styled.p`
-  width: 31.5rem;
+  width: 100%;
   height: 2.2rem;
   font-size: 1.4rem;
   font-weight: 500;
@@ -43,7 +43,7 @@ const Header2 = styled.p`
 `;
 
 const Header = styled.p`
-  width: 31.6rem;
+  width: 100%;
   height: 2.9rem;
   font-size: 2rem;
   font-weight: bold;

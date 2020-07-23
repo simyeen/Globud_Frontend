@@ -22,7 +22,7 @@ const TextBox = styled.div`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.57;
-  letter-spacing: -0.5.6rem;
+  letter-spacing: -0.056rem;
   color: #000000;
 
   padding: 1.6rem 2.2rem;

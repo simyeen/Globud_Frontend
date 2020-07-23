@@ -45,9 +45,19 @@ export default function DetailCrew(props) {
     </Wrapper>
   );
 }
-
+/*      
+  
+        <TextWrapper>
+          <BlueText style={{ width: "3.0rem" }}>{numActivities}회차</BlueText>
+          <BlueText style={{ display: "inline-block", width: "4.8rem" }}>
+            {languages} 사용
+          </BlueText>
+          <BlueText style={{ width: "4.8rem" }}>
+            {totalForeignerMember + totalKoreanMember}명 제한
+          </BlueText>
+        </TextWrapper>*/
 const MiniBar = styled.div`
-  width: 31.6rem;
+  width: 100%;
   height: 0.1rem;
   background-color: #e1e4e7;
 `;
@@ -65,7 +75,6 @@ const DotSpace = styled.div`
 `;
 
 const Text = styled.p`
-  width: 31.6rem;
   height: 2.3rem;
   font-size: 2rem;
   font-weight: bold;
@@ -133,7 +142,7 @@ const CrossBar = styled.img`
 `;
 
 const CrewTitle = styled.p`
-  width: 31.4rem;
+  width: 100%;
   height: 6.3rem;
   font-size: 1.3rem;
   font-weight: normal;
@@ -143,12 +152,13 @@ const CrewTitle = styled.p`
   letter-spacing: -0.052rem;
   color: #222426;
   margin-bottom: 3.7rem;
+  margin-top: 1rem;
 `;
 
 const CrewHeader = styled.p`
-  width: 31.4rem;
+  width:100%
   height: 3.5rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -157,7 +167,7 @@ const CrewHeader = styled.p`
   color: #3f66f1;
 
   margin-top: 2.2rem;
-  margin-bottom: 0rem;
+ 
 `;
 
 const CrewImage = styled.img`

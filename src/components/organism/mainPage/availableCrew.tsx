@@ -100,7 +100,7 @@ const CrewHeader = styled.p`
 `;
 
 const CrewImage = styled.img`
-  width: 31.6rem;
+  width: 100%;
   height: 14.4rem;
   border-radius: 0.8rem;
   margin-top: 3.5rem;

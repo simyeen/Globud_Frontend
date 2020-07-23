@@ -103,7 +103,6 @@ const CrewImformationWrapper = styled.div`
 `;
 
 const CrewTitle = styled.p`
-  width: 31.6rem;
   height: 3.6rem;
   font-size: 2.5rem;
   font-weight: 500;
@@ -117,7 +116,6 @@ const CrewTitle = styled.p`
 // 영어로 이런 이야기까지? 이 부분에서
 // 모바일로 전환하면 오른쪽 여백이 없어짐.
 const CrewHeader = styled.p`
-  width: 31.6rem;
   height: 2.3rem;
   font-size: 1.6rem;
 
@@ -145,12 +143,12 @@ const CrewImage = styled.img`
   width: 100%;
   height: 19.9rem;
   object-fit: contain;
-
+  overflow: hidden;
   padding-top: 0rem;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  overflow: hidden;
 `;

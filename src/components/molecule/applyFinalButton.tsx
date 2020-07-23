@@ -16,7 +16,7 @@ export default function Apply() {
 }
 
 const ApplyFinalButton = styled.img`
-  width: 31.4rem;
+  width: 100%;
   height: 6rem;
   object-fit: contain;
   margin-top: 1.3rem;
@@ -25,6 +25,6 @@ const ApplyFinalButton = styled.img`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 36rem;
+  width: 100%;
   height: 9.7rem;
 `;

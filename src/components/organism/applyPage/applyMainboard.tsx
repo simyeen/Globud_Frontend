@@ -11,7 +11,12 @@ export default function ApplyMainboard(props) {
         <Header>당신의 크루를 만나보세요!</Header>
       </HederWrapper>
       <SubWrapper>
-        <Image src={img1} alt="신청폼 전광판" />
+        {crewNumber === 1 ? (
+          <Image src="/detail1_img4.png" alt="신청폼 전광판" />
+        ) : (
+          <Image src="/detail2_img4.png" alt="신청폼 전광판" />
+        )}
+
         <Header
           style={{
             height: "2.3rem",
@@ -34,9 +39,9 @@ export default function ApplyMainboard(props) {
         </GreyWrpper>
         <TextWrapper>
           {crewNumber === 1 ? (
-            <Text>2020년 7월 매주 토요일 15:00 - 17:00</Text>
+            <Text>2020년 8월 매주 토요일 15:00 - 17:00</Text>
           ) : (
-            <Text>2020년 7월 18일 토요일 17:00 - 20:00</Text>
+            <Text>2020년 8월 15일 토요일 17:00 - 20:00</Text>
           )}
           <TextSubWrapper>
             {crewNumber === 1 ? (
@@ -46,7 +51,6 @@ export default function ApplyMainboard(props) {
             )}
             <Header
               style={{
-                width: "9.9rem",
                 fontSize: "1.1rem",
                 textAlign: "right",
                 marginLeft: "1.5rem",
@@ -70,9 +74,8 @@ const Dot = styled.img`
 `;
 
 const Text = styled.p`
-  width: 20rem;
   height: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -83,11 +86,14 @@ const Text = styled.p`
 
 const TextSubWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 const TextWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+
   margin-top: 1.4rem;
 `;
 
@@ -127,7 +133,6 @@ const SubWrapper = styled.div`
 `;
 
 const Header = styled.p`
-  width: 31.6rem;
   height: 1.5rem;
   font-size: 2rem;
   font-weight: bold;

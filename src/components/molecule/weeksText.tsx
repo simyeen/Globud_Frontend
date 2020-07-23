@@ -20,7 +20,6 @@ const Blue = styled.strong`
 `;
 
 const Content = styled.p`
-  width: 24.9rem;
   height: 7rem;
   font-size: 1.3rem;
   font-weight: normal;
@@ -34,7 +33,6 @@ const Content = styled.p`
 `;
 
 const Title = styled.p`
-  width: 30rem;
   height: 2.1rem;
   font-size: 1.3rem;
   font-weight: bold;

@@ -16,11 +16,11 @@ export default function OddWeeksText({ detailActivities }) {
 }
 
 const ImageBox = styled.div`
-  padding-left: 6.4rem;
+  padding-left: 7rem;
 `;
 
 const Image = styled.img`
-  width: 29.7rem;
+  width: 100%;
   height: 16rem;
   object-fit: contain;
 

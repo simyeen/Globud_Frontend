@@ -13,7 +13,7 @@ export default function DetailLeader(props) {
           <TextWrappr>
             <NameWrapper>
               <Leader>리더</Leader>
-              {crew === 1 ? <Name>{name}</Name> : <LongName>{name}</LongName>}
+              {crew === 1 ? <Name>a{name}</Name> : <LongName>{name}</LongName>}
               <Logo src="/bird.png" alt="새 로고" />
             </NameWrapper>
             <Introduce>{introduction}</Introduce>
@@ -33,7 +33,7 @@ const CrossBar = styled.img`
 `;
 
 const Introduce = styled.div`
-  width: 25.1rem;
+  width: 100%;
   height: 8.62rem;
   font-size: 1.26rem;
   font-weight: normal;
@@ -50,7 +50,7 @@ const Logo = styled.img`
 `;
 
 const LongName = styled.p`
-  width: 17rem;
+  width: auto;
   height: 2.3rem;
   font-size: 1.6rem;
   font-weight: bold;
@@ -62,7 +62,7 @@ const LongName = styled.p`
 `;
 
 const Name = styled.p`
-  width: 4.4rem;
+  width: auto;
   height: 2.3rem;
   font-size: 1.6rem;
   font-weight: bold;
@@ -113,7 +113,7 @@ const Space = styled.div`
 `;
 
 const Header = styled.p`
-  width: 31.5rem;
+  width: 100%;
   height: 2.9rem;
   font-size: 2rem;
   font-weight: bold;

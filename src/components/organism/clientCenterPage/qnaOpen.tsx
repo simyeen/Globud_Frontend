@@ -10,7 +10,7 @@ export default function QnaOpen({ content }) {
 }
 
 const Text = styled.p`
-  width: 30.3rem;
+  width: 100%;
   height: 11.1rem;
   font-size: 1.3rem;
   font-weight: normal;
@@ -22,7 +22,7 @@ const Text = styled.p`
 `;
 
 const Wrapper = styled.div`
-  width: 36rem;
+  width: 100%;
   height: 15.4rem;
   background-color: #f6f6f6;
   padding-top: 2rem;

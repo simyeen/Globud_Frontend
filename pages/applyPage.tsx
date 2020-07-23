@@ -57,7 +57,7 @@ export default function ApplyPage() {
             <Header>은행을 선택해주세요.</Header>
             <Image src="/close.png" alt="닫기창" onClick={handleDrawerToggle} />
           </HeaderWrapper>
-          <CrossLine />
+          <CrossLine src="/crossbar.png" alt="크로스 바 " />
           <BankMenu>
             {bankList.map((item) => {
               return (
@@ -92,8 +92,9 @@ export default function ApplyPage() {
   );
 }
 
-const CrossLine = styled.div`
+const CrossLine = styled.img`
   width: 100%;
+  height: 0.1rem;
   background-color: #222426;
   z-index: 999;
 `;
@@ -139,19 +140,19 @@ const HeaderWrapper = styled.div`
   height: 5.4rem;
 
   background-color: #ffffff;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 0.8rem 0.8rem 0px 0px;
   padding: 1.5rem 2.2rem;
 `;
 
 const BankWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 36rem;
-  height: 41.7rem;
+  width: 100%;
 
   overflow: auto;
   z-index: 5;
   position: fixed;
+  padding-bottom: 3.8rem;
   top: 22.3rem;
 `;
 
@@ -167,8 +168,8 @@ const CrossBar = styled.img`
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 36rem;
+
   overflow: auto;
   display: flex;
   flex-direction: column;

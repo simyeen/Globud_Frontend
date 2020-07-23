@@ -7,14 +7,20 @@ export default function OrderWeeksText({ detailActivities }) {
   const { img } = detailActivities;
   return (
     <Wrapper>
-      <Image src={img} alt="주의사항 1" />
+      <ImageBox>
+        <Image src={img} alt="테스트 이미지"></Image>
+      </ImageBox>
       <WeeksText {...{ detailActivities }} />
     </Wrapper>
   );
 }
 
+const ImageBox = styled.div`
+  padding-right: 6.4rem;
+`;
+
 const Image = styled.img`
-  width: 29.7rem;
+  width: 100%;
   height: 16rem;
   object-fit: contain;
 

@@ -154,8 +154,9 @@ export default function AvailableCrewList(props) {
             <Text
               style={{
                 color: "#555961",
+                fontSize: "1.2rem",
                 fontWeight: "normal",
-                marginTop: "0.1rem",
+                marginTop: "0.2rem",
               }}
             >
               {seletBank}
@@ -170,10 +171,9 @@ export default function AvailableCrewList(props) {
             placeholder="'-'  는 빼고 입력해주세요."
             onChange={handleFormChange}
             style={{
-              marginTop: "0.4rem",
               border: "0",
-              width: "19.4rem",
-              height: "3.5rem",
+              width: "100%",
+              height: "100%",
             }}
           />
         </BankWrapper>
@@ -289,19 +289,10 @@ const BankWrapper = styled.div`
   height: 4.5rem;
 
   padding-left: 1.5rem;
-  font-size: 1.3rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.62;
-  letter-spacing: -0.052rem;
 
   border-radius: 0.8rem;
   border: solid 0.115rem #3f66f1;
   outline: none;
-
-  z-index: 1;
-  position: relative;
 `;
 
 const Content = styled.input`
@@ -319,6 +310,15 @@ const Content = styled.input`
   border-radius: 0.8rem;
   border: solid 0.115rem #3f66f1;
   outline: none;
+
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const Blue = styled.strong`

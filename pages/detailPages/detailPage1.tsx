@@ -36,7 +36,7 @@ export default function DetailPage1() {
   ];
 
   const placeDescprition = [
-    { id: 1, description: "2020년 7월 매주 토요일 15:00 - 17:00" },
+    { id: 1, description: "2020년 8월 매주 토요일 15:00 - 17:00" },
     { id: 2, description: "마포구 창천동 탐앤탐스 신촌로터리점 소회의실" },
     { id: 3, description: "109, Sinchon-ro, Seodaemun-gu, Seoul" },
   ];
@@ -122,7 +122,7 @@ const DetailNavigator = styled.div`
   display: flex;
   justify-content: space-between;
 
-  width: 36rem;
+  width: 100%;
   height: 5rem;
   object-fit: contain;
 
@@ -144,3 +144,5 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+/* */

@@ -36,7 +36,7 @@ export default function DetailPage1() {
   ];
 
   const placeDescprition = [
-    { id: 1, description: "2020년 7월 18일 토요일 17:00 - 20:00" },
+    { id: 1, description: "2020년 8월 15일 토요일 17:00 - 20:00" },
     { id: 2, description: "성동구 행당동 행당빈방" },
     { id: 3, description: "24, Gosanja-ro 6-gil, Seongdong-gu, Seoul" },
   ];
@@ -123,7 +123,7 @@ const DetailNavigator = styled.div`
   display: flex;
   justify-content: space-between;
 
-  width: 36rem;
+  width: 100%;
   height: 5rem;
   object-fit: contain;
 
