@@ -17,7 +17,7 @@ export default function ToApplyPage({ crew }) {
   return (
     <Wrapper>
       <ApplyButton
-        src="/applyFinalButton.png"
+        src="/applyButton.png"
         alt="버튼사진"
         onClick={handleRouter}
       ></ApplyButton>
