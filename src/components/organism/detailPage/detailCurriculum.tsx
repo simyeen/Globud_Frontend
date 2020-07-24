@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function DetailCurriculum(props) {
-  const { peopleDescprition, placeDescprition, weeksDescprition } = props;
+  const { peopleDescprition, placeDescprition, weeksDescprition, crew } = props;
   return (
     <Wrapper>
       <SubWrapper>
@@ -51,12 +51,21 @@ export default function DetailCurriculum(props) {
         </WeeksWrapper>
 
         <DetailHeader>무엇을 하나요?</DetailHeader>
-        <DetailExplain>
-          글로벗의 언어/대화 크루는 4주간의 커리큘럼이 탄탄하게 짜여져 있어요.
-          처음 만난 사람들과도{" "}
-          <strong>즐겁게 영어로 대화를 나눌 수 있답니다!</strong>저희가 준비한
-          커리큘럼, 확인해볼까요?
-        </DetailExplain>
+
+        {crew === 2 ? (
+          <DetailExplain>
+            글로벗의 요리 크루는 그날 모인 크루원들끼리 취향과 의견을 모아,
+            <strong> 요리 메뉴를 정하고 같이 요리합니다!</strong> 잘
+            모르시겠다면, 지난 크루에서 만들었던 요리를 소개해드릴게요.
+          </DetailExplain>
+        ) : (
+          <DetailExplain>
+            글로벗의 언어/대화 크루는 4주간의 커리큘럼이 탄탄하게 짜여져 있어요.
+            처음 만난 사람들과도
+            <strong>즐겁게 영어로 대화를 나눌 수 있답니다!</strong>저희가 준비한
+            커리큘럼, 확인해볼까요?
+          </DetailExplain>
+        )}
       </SubWrapper>
     </Wrapper>
   );

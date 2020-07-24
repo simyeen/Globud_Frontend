@@ -93,6 +93,7 @@ export default function DetailPage1() {
       </a>
       <a id="Curriculum">
         <DetailCurriculum
+          crew={crew}
           {...{ peopleDescprition }}
           {...{ placeDescprition }}
           {...{ weeksDescprition }}
