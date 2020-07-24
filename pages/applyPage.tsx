@@ -145,7 +145,7 @@ const BankWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 36rem;
-  height: 63.5vh;
+  height: 100vh;
 
   overflow: auto;
   z-index: 999;
@@ -153,7 +153,7 @@ const BankWrapper = styled.div`
   bottom: 0;
   top: 25rem;
 `;
-
+//63.5vh
 const BankNavigator = styled.div`
   width: 100%;
   height: 100vh;
