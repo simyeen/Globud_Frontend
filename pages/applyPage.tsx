@@ -69,6 +69,7 @@ export default function ApplyPage() {
                 />
               );
             })}
+            <BankSpace />
           </BankMenu>
         </BankWrapper>
       )}
@@ -91,6 +92,12 @@ export default function ApplyPage() {
     </Wrapper>
   );
 }
+
+const BankSpace = styled.div`
+  width: 100%;
+  height: 3.8rem;
+  background-color: #ffffff;
+`;
 
 const CrossLine = styled.img`
   width: 100%;
@@ -117,28 +124,19 @@ const Header = styled.h1`
   color: #000000;
 `;
 
-const BankNavigator = styled.div`
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  background-color: #222426;
-  overflow: scroll;
-  z-index: 3;
-  position: fixed;
-`;
-
 const BankMenu = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  background-color: #ffffff;
 `;
 
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 36rem;
+  width: 100%;
   height: 5.4rem;
   background-color: #ffffff;
+  z-index: 999;
   border-radius: 0.8rem 0.8rem 0px 0px;
   padding: 1.5rem 2.2rem;
 `;
@@ -147,13 +145,23 @@ const BankWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 36rem;
-  height: 80%;
+  height: 63.5vh;
 
   overflow: auto;
-  z-index: 5;
+  z-index: 999;
   position: fixed;
+  bottom: 0;
+  top: 25rem;
+`;
 
-  top: 22.3rem;
+const BankNavigator = styled.div`
+  width: 100%;
+  height: 100vh;
+  opacity: 0.8;
+  background-color: #222426;
+  overflow: scroll;
+  z-index: 3;
+  position: fixed;
 `;
 
 const Space = styled.div`
@@ -169,7 +177,6 @@ const CrossBar = styled.img`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;

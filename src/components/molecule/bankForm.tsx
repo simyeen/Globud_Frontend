@@ -14,7 +14,7 @@ export default function BankForm({ bank, onSelet, onClose }) {
   );
 }
 //map으로 뿌려주려면 double arrow function을 써줘야 하는데 안되네.
-const TextBox = styled.div`
+const TextBox = styled.p`
   width: 100%;
   height: 5.4rem;
   font-size: 1.4rem;
@@ -25,6 +25,9 @@ const TextBox = styled.div`
   letter-spacing: -0.056rem;
   color: #000000;
 
+  border: 0px;
+  outline: 0px;
+  margin-bottom: 0rem;
   padding: 1.6rem 2.2rem;
   background-color: #ffffff;
 `;
