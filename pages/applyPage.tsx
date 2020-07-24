@@ -156,7 +156,7 @@ const BankWrapper = styled.div`
 //63.5vh
 const BankNavigator = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   opacity: 0.8;
   background-color: #222426;
   overflow: scroll;
