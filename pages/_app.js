@@ -87,7 +87,7 @@ export default class Timeline extends App {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 36rem;
+  max-width: 37.5rem;
   min-height: 100%;
   background-color: white;
   position: relatvie;
