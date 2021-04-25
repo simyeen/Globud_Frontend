@@ -1,7 +1,6 @@
 <p align="center">
   <a target="_blank" href="https://www.globud.kr/index"><img ![globud_title](https://user-images.githubusercontent.com/60914410/115986737-a429cd80-a5ec-11eb-8b2f-c052a0cf2016.png)
-src = "images/globud_title.png" width="70%" height="70%"></a>
-![tech_stack](https://user-images.githubusercontent.com/60914410/115986738-a5f39100-a5ec-11eb-8aa1-c9fc1653f67b.jpeg)
+src = "" width="70%" height="70%"></a>
 <br><br><br>
 </p>
 
@@ -36,7 +35,7 @@ src = "images/globud_title.png" width="70%" height="70%"></a>
 
 
 ## 기술 스택
-<img src="images/globud-stack.JPG" width="70%" height="70%">
+<img src="" width="70%" height="70%">
 
 
 ## 팀 성과
