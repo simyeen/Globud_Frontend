@@ -1,9 +1,8 @@
 <p align="center">
   <a target="_blank" href="https://www.globud.kr/index"><img ![globud_title](https://user-images.githubusercontent.com/60914410/115986737-a429cd80-a5ec-11eb-8b2f-c052a0cf2016.png)
-src = "" width="70%" height="70%"></a>
+src = "https://user-images.githubusercontent.com/60914410/115986807-f8cd4880-a5ec-11eb-86f0-ebfb4581d3cc.png" width="70%" height="70%"></a>
 <br><br><br>
 </p>
-
 
 ## “Be local, Act global”
 한국에 있다고, 한국에만 갇혀있을 필요 없어요! Act global  
@@ -35,7 +34,7 @@ src = "" width="70%" height="70%"></a>
 
 
 ## 기술 스택
-<img src="" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/60914410/115986814-0256b080-a5ed-11eb-9358-6f322d9bd9d3.jpeg" width="70%" height="70%">
 
 
 ## 팀 성과
